@@ -1,0 +1,1 @@
+# liveshopper-sdk-ios
