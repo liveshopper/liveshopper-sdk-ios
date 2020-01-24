@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<document
+        type="com.apple.InterfaceBuilder3.CocoaTouch.XIB"
+        version="3.0"
+        toolsVersion="14490.70"
+        targetRuntime="iOS.CocoaTouch"
+        propertyAccessControl="none"
+        useAutolayout="YES"
+        useTraitCollections="YES"
+        colorMatched="YES">
+    <device
+            id="retina4_7"
+            orientation="portrait">
+        <adaptation id="fullscreen" />
+    </device>
+    <dependencies>
+        <deployment identifier="iOS" />
+        <plugIn
+                identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin"
+                version="14490.49" />
+        <capability
+                name="documents saved in the Xcode 8 format"
+                minToolsVersion="8.0" />
+    </dependencies>
+    <objects>
+        <placeholder
+                placeholderIdentifier="IBFilesOwner"
+                id="-1"
+                userLabel="File's Owner" />
+        <placeholder
+                placeholderIdentifier="IBFirstResponder"
+                id="-2"
+                customClass="UIResponder" />
+        <view
+                contentMode="scaleToFill"
+                translatesAutoresizingMaskIntoConstraints="NO"
+                id="iN0-l3-epB"
+                customClass="DateView"
+                customModule="LiveShopperExample"
+                customModuleProvider="target">
+            <rect
+                    key="frame"
+                    x="0.0"
+                    y="0.0"
+                    width="375"
+                    height="668" />
+            <subviews>
+                <button
+                        opaque="NO"
+                        contentMode="scaleToFill"
+                        contentHorizontalAlignment="center"
+                        contentVerticalAlignment="center"
+                        buttonType="roundedRect"
+                        lineBreakMode="middleTruncation"
+                        translatesAutoresizingMaskIntoConstraints="NO"
+                        id="uYG-Vz-2Ft"
+                        customClass="LsButton"
+                        customModule="LiveShopperExample"
+                        customModuleProvider="target">
+                    <rect
+                            key="frame"
+                            x="16"
+                            y="614"
+                            width="343"
+                            height="38" />
+                    <color
+                            key="backgroundColor"
+                            red="0.0"
+                            green="0.47843137250000001"
+                            blue="1"
+                            alpha="1"
+                            colorSpace="custom"
+                            customColorSpace="sRGB" />
+                    <constraints>
+                        <constraint
+                                firstAttribute="height"
+                                constant="38"
+                                id="djr-bt-K2d" />
+                    </constraints>
+                    <state
+                            key="normal"
+                            title="Next">
+                        <color
+                                key="titleColor"
+                                white="1"
+                                alpha="1"
+                                colorSpace="custom"
+                                customColorSpace="genericGamma22GrayColorSpace" />
+                    </state>
+                    <connections>
+                        <action
+                                selector="onNext:"
+                                destination="iN0-l3-epB"
+                                eventType="touchUpInside"
+                                id="b8s-NG-imi" />
+                    </connections>
+                </button>
+                <label
+                        opaque="NO"
+                        userInteractionEnabled="NO"
+                        contentMode="left"
+                        horizontalHuggingPriority="251"
+                        verticalHuggingPriority="251"
+                        text="What is today's date?"
+                        textAlignment="natural"
+                        lineBreakMode="tailTruncation"
+                        baselineAdjustment="alignBaselines"
+                        adjustsFontSizeToFit="NO"
+                        translatesAutoresizingMaskIntoConstraints="NO"
+                        id="fE5-3q-tqZ">
+                    <rect
+                            key="frame"
+                            x="16"
+                            y="16"
+                            width="343"
+                            height="20" />
+                    <constraints>
+                        <constraint
+                                firstAttribute="height"
+                                relation="greaterThanOrEqual"
+                                constant="20"
+                                id="62t-a8-FP2" />
+                    </constraints>
+                    <fontDescription
+                            key="fontDescription"
+                            type="system"
+                            weight="semibold"
+                            pointSize="17" />
+                    <color
+                            key="textColor"
+                            name="systemYellowColor"
+                            catalog="System"
+                            colorSpace="catalog" />
+                    <nil key="highlightedColor" />
+                </label>
+                <datePicker
+                        contentMode="scaleToFill"
+                        contentHorizontalAlignment="center"
+                        contentVerticalAlignment="center"
+                        datePickerMode="date"
+                        minuteInterval="1"
+                        translatesAutoresizingMaskIntoConstraints="NO"
+                        id="kA3-DT-OcP">
+                    <rect
+                            key="frame"
+                            x="0.0"
+                            y="44"
+                            width="375"
+                            height="162" />
+                    <constraints>
+                        <constraint
+                                firstAttribute="height"
+                                constant="162"
+                                id="UQQ-Tn-u7V" />
+                    </constraints>
+                    <date
+                            key="date"
+                            timeIntervalSinceReferenceDate="569354930.88256395">
+                        <!--2019-01-16 18:08:50 +0000-->
+                    </date>
+                </datePicker>
+                <view
+                        contentMode="scaleToFill"
+                        translatesAutoresizingMaskIntoConstraints="NO"
+                        id="Xw1-iI-7wk">
+                    <rect
+                            key="frame"
+                            x="0.0"
+                            y="222"
+                            width="375"
+                            height="376" />
+                    <color
+                            key="backgroundColor"
+                            white="1"
+                            alpha="1"
+                            colorSpace="custom"
+                            customColorSpace="genericGamma22GrayColorSpace" />
+                    <constraints>
+                        <constraint
+                                firstAttribute="height"
+                                constant="376"
+                                id="sbr-gl-EVF" />
+                    </constraints>
+                </view>
+            </subviews>
+            <color
+                    key="backgroundColor"
+                    red="1"
+                    green="1"
+                    blue="1"
+                    alpha="1"
+                    colorSpace="custom"
+                    customColorSpace="sRGB" />
+            <constraints>
+                <constraint
+                        firstItem="uYG-Vz-2Ft"
+                        firstAttribute="leading"
+                        secondItem="iN0-l3-epB"
+                        secondAttribute="leading"
+                        constant="16"
+                        id="1xm-St-toS" />
+                <constraint
+                        firstItem="fE5-3q-tqZ"
+                        firstAttribute="top"
+                        secondItem="iN0-l3-epB"
+                        secondAttribute="top"
+                        constant="16"
+                        id="8jI-fb-qL8" />
+                <constraint
+                        firstItem="Xw1-iI-7wk"
+                        firstAttribute="trailing"
+                        secondItem="iN0-l3-epB"
+                        secondAttribute="trailing"
+                        id="9DO-MU-PmN" />
+                <constraint
+                        firstItem="Xw1-iI-7wk"
+                        firstAttribute="leading"
+                        secondItem="iN0-l3-epB"
+                        secondAttribute="leading"
+                        id="Fxy-Ck-7PC" />
+                <constraint
+                        firstAttribute="trailing"
+                        secondItem="uYG-Vz-2Ft"
+                        secondAttribute="trailing"
+                        constant="16"
+                        id="Mgb-fJ-T6V" />
+                <constraint
+                        firstItem="kA3-DT-OcP"
+                        firstAttribute="trailing"
+                        secondItem="iN0-l3-epB"
+                        secondAttribute="trailing"
+                        id="eB5-9r-d1k" />
+                <constraint
+                        firstItem="kA3-DT-OcP"
+                        firstAttribute="top"
+                        secondItem="fE5-3q-tqZ"
+                        secondAttribute="bottom"
+                        constant="8"
+                        id="fL7-a9-GDq" />
+                <constraint
+                        firstItem="fE5-3q-tqZ"
+                        firstAttribute="leading"
+                        secondItem="iN0-l3-epB"
+                        secondAttribute="leading"
+                        constant="16"
+                        id="g0u-PQ-UF9" />
+                <constraint
+                        firstAttribute="bottom"
+                        secondItem="uYG-Vz-2Ft"
+                        secondAttribute="bottom"
+                        constant="16"
+                        id="g9m-qX-Vfb" />
+                <constraint
+                        firstAttribute="width"
+                        constant="375"
+                        id="iHz-l6-GU1" />
+                <constraint
+                        firstAttribute="height"
+                        relation="greaterThanOrEqual"
+                        priority="250"
+                        constant="688"
+                        id="k7I-hV-TvT" />
+                <constraint
+                        firstItem="kA3-DT-OcP"
+                        firstAttribute="leading"
+                        secondItem="iN0-l3-epB"
+                        secondAttribute="leading"
+                        id="pRv-Ee-Ejb" />
+                <constraint
+                        firstItem="uYG-Vz-2Ft"
+                        firstAttribute="top"
+                        secondItem="Xw1-iI-7wk"
+                        secondAttribute="bottom"
+                        constant="16"
+                        id="vvW-br-YFx" />
+                <constraint
+                        firstItem="Xw1-iI-7wk"
+                        firstAttribute="top"
+                        secondItem="kA3-DT-OcP"
+                        secondAttribute="bottom"
+                        constant="16"
+                        id="zEE-ZB-JlS" />
+                <constraint
+                        firstAttribute="trailing"
+                        secondItem="fE5-3q-tqZ"
+                        secondAttribute="trailing"
+                        constant="16"
+                        id="zyo-CD-ktY" />
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics" />
+            <connections>
+                <outlet
+                        property="datePicker"
+                        destination="kA3-DT-OcP"
+                        id="lMJ-3W-Ay1" />
+                <outlet
+                        property="nextButton"
+                        destination="uYG-Vz-2Ft"
+                        id="DPH-Vk-ZTY" />
+                <outlet
+                        property="photoContainerView"
+                        destination="Xw1-iI-7wk"
+                        id="06D-vZ-hGY" />
+                <outlet
+                        property="questionLabel"
+                        destination="fE5-3q-tqZ"
+                        id="3vz-Sr-4xT" />
+            </connections>
+            <point
+                    key="canvasLocation"
+                    x="138.40000000000001"
+                    y="171.81409295352324" />
+        </view>
+    </objects>
+</document>
