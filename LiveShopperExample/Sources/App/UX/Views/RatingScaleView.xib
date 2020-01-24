@@ -1,0 +1,569 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<document
+        type="com.apple.InterfaceBuilder3.CocoaTouch.XIB"
+        version="3.0"
+        toolsVersion="14490.70"
+        targetRuntime="iOS.CocoaTouch"
+        propertyAccessControl="none"
+        useAutolayout="YES"
+        useTraitCollections="YES"
+        useSafeAreas="YES"
+        colorMatched="YES">
+    <device
+            id="retina4_7"
+            orientation="portrait">
+        <adaptation id="fullscreen" />
+    </device>
+    <dependencies>
+        <deployment identifier="iOS" />
+        <plugIn
+                identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin"
+                version="14490.49" />
+        <capability
+                name="Safe area layout guides"
+                minToolsVersion="9.0" />
+        <capability
+                name="documents saved in the Xcode 8 format"
+                minToolsVersion="8.0" />
+    </dependencies>
+    <objects>
+        <placeholder
+                placeholderIdentifier="IBFilesOwner"
+                id="-1"
+                userLabel="File's Owner" />
+        <placeholder
+                placeholderIdentifier="IBFirstResponder"
+                id="-2"
+                customClass="UIResponder" />
+        <view
+                contentMode="scaleToFill"
+                translatesAutoresizingMaskIntoConstraints="NO"
+                id="iN0-l3-epB"
+                customClass="RatingScaleView"
+                customModule="LiveShopperExample"
+                customModuleProvider="target">
+            <rect
+                    key="frame"
+                    x="0.0"
+                    y="0.0"
+                    width="375"
+                    height="689" />
+            <subviews>
+                <view
+                        contentMode="scaleToFill"
+                        translatesAutoresizingMaskIntoConstraints="NO"
+                        id="6Ob-6T-Pza"
+                        customClass="CosmosView"
+                        customModule="Cosmos">
+                    <rect
+                            key="frame"
+                            x="77.5"
+                            y="150.5"
+                            width="220"
+                            height="40" />
+                    <color
+                            key="backgroundColor"
+                            white="1"
+                            alpha="1"
+                            colorSpace="custom"
+                            customColorSpace="genericGamma22GrayColorSpace" />
+                    <constraints>
+                        <constraint
+                                firstAttribute="height"
+                                constant="40"
+                                id="xHv-YN-CXe" />
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute
+                                type="number"
+                                keyPath="starSize">
+                            <real
+                                    key="value"
+                                    value="40" />
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute
+                                type="color"
+                                keyPath="filledColor">
+                            <color
+                                    key="value"
+                                    white="0.66666666666666663"
+                                    alpha="1"
+                                    colorSpace="custom"
+                                    customColorSpace="genericGamma22GrayColorSpace" />
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute
+                                type="color"
+                                keyPath="emptyBorderColor">
+                            <color
+                                    key="value"
+                                    white="0.66666666666666663"
+                                    alpha="1"
+                                    colorSpace="custom"
+                                    customColorSpace="genericGamma22GrayColorSpace" />
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute
+                                type="color"
+                                keyPath="filledBorderColor">
+                            <color
+                                    key="value"
+                                    white="0.66666666666666663"
+                                    alpha="1"
+                                    colorSpace="custom"
+                                    customColorSpace="genericGamma22GrayColorSpace" />
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute
+                                type="number"
+                                keyPath="fillMode">
+                            <integer
+                                    key="value"
+                                    value="0" />
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute
+                                type="number"
+                                keyPath="emptyBorderWidth">
+                            <real
+                                    key="value"
+                                    value="0.80000000000000004" />
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <label
+                        opaque="NO"
+                        userInteractionEnabled="NO"
+                        contentMode="left"
+                        horizontalHuggingPriority="251"
+                        verticalHuggingPriority="251"
+                        text="Not So Good"
+                        lineBreakMode="tailTruncation"
+                        baselineAdjustment="alignBaselines"
+                        adjustsFontSizeToFit="NO"
+                        translatesAutoresizingMaskIntoConstraints="NO"
+                        id="AZg-fk-14R">
+                    <rect
+                            key="frame"
+                            x="16"
+                            y="206.5"
+                            width="98.5"
+                            height="20.5" />
+                    <fontDescription
+                            key="fontDescription"
+                            type="system"
+                            pointSize="17" />
+                    <color
+                            key="textColor"
+                            white="0.66666666669999997"
+                            alpha="1"
+                            colorSpace="custom"
+                            customColorSpace="genericGamma22GrayColorSpace" />
+                    <nil key="highlightedColor" />
+                </label>
+                <label
+                        opaque="NO"
+                        userInteractionEnabled="NO"
+                        contentMode="left"
+                        horizontalHuggingPriority="251"
+                        verticalHuggingPriority="251"
+                        text="Good"
+                        textAlignment="right"
+                        lineBreakMode="tailTruncation"
+                        baselineAdjustment="alignBaselines"
+                        adjustsFontSizeToFit="NO"
+                        translatesAutoresizingMaskIntoConstraints="NO"
+                        id="5Ey-Ce-FVG">
+                    <rect
+                            key="frame"
+                            x="317"
+                            y="206.5"
+                            width="42"
+                            height="21" />
+                    <fontDescription
+                            key="fontDescription"
+                            type="system"
+                            pointSize="17" />
+                    <color
+                            key="textColor"
+                            white="0.66666666669999997"
+                            alpha="1"
+                            colorSpace="custom"
+                            customColorSpace="genericGamma22GrayColorSpace" />
+                    <nil key="highlightedColor" />
+                </label>
+                <label
+                        opaque="NO"
+                        userInteractionEnabled="NO"
+                        contentMode="left"
+                        horizontalHuggingPriority="251"
+                        verticalHuggingPriority="251"
+                        text="On a scale of 1 to 5 how much do you agree with the following statement?"
+                        textAlignment="natural"
+                        lineBreakMode="tailTruncation"
+                        numberOfLines="0"
+                        baselineAdjustment="alignBaselines"
+                        adjustsFontSizeToFit="NO"
+                        translatesAutoresizingMaskIntoConstraints="NO"
+                        id="zLX-Sl-25I">
+                    <rect
+                            key="frame"
+                            x="16"
+                            y="40"
+                            width="343"
+                            height="41" />
+                    <constraints>
+                        <constraint
+                                firstAttribute="height"
+                                relation="greaterThanOrEqual"
+                                constant="20"
+                                id="Lvr-mg-SGE" />
+                    </constraints>
+                    <fontDescription
+                            key="fontDescription"
+                            type="system"
+                            weight="semibold"
+                            pointSize="17" />
+                    <color
+                            key="textColor"
+                            name="systemYellowColor"
+                            catalog="System"
+                            colorSpace="catalog" />
+                    <nil key="highlightedColor" />
+                </label>
+                <label
+                        opaque="NO"
+                        userInteractionEnabled="NO"
+                        contentMode="left"
+                        horizontalHuggingPriority="251"
+                        verticalHuggingPriority="251"
+                        text="LiveShopper is awesome"
+                        textAlignment="natural"
+                        lineBreakMode="tailTruncation"
+                        numberOfLines="0"
+                        baselineAdjustment="alignBaselines"
+                        adjustsFontSizeToFit="NO"
+                        translatesAutoresizingMaskIntoConstraints="NO"
+                        id="n5H-Xz-pXX">
+                    <rect
+                            key="frame"
+                            x="16"
+                            y="97"
+                            width="343"
+                            height="20.5" />
+                    <constraints>
+                        <constraint
+                                firstAttribute="height"
+                                relation="greaterThanOrEqual"
+                                constant="20"
+                                id="AUZ-jj-nkm" />
+                    </constraints>
+                    <fontDescription
+                            key="fontDescription"
+                            type="system"
+                            weight="semibold"
+                            pointSize="17" />
+                    <nil key="highlightedColor" />
+                </label>
+                <view
+                        contentMode="scaleToFill"
+                        translatesAutoresizingMaskIntoConstraints="NO"
+                        id="gsk-EV-KGu">
+                    <rect
+                            key="frame"
+                            x="0.0"
+                            y="133.5"
+                            width="375"
+                            height="1" />
+                    <color
+                            key="backgroundColor"
+                            white="0.66666666666666663"
+                            alpha="1"
+                            colorSpace="custom"
+                            customColorSpace="genericGamma22GrayColorSpace" />
+                    <constraints>
+                        <constraint
+                                firstAttribute="height"
+                                constant="1"
+                                id="AT1-uf-apb" />
+                    </constraints>
+                </view>
+                <button
+                        opaque="NO"
+                        contentMode="scaleToFill"
+                        contentHorizontalAlignment="center"
+                        contentVerticalAlignment="center"
+                        buttonType="roundedRect"
+                        lineBreakMode="middleTruncation"
+                        translatesAutoresizingMaskIntoConstraints="NO"
+                        id="QJi-aj-60E"
+                        customClass="LsButton"
+                        customModule="LiveShopperExample"
+                        customModuleProvider="target">
+                    <rect
+                            key="frame"
+                            x="16"
+                            y="635"
+                            width="343"
+                            height="38" />
+                    <color
+                            key="backgroundColor"
+                            red="0.0"
+                            green="0.47843137250000001"
+                            blue="1"
+                            alpha="1"
+                            colorSpace="custom"
+                            customColorSpace="sRGB" />
+                    <constraints>
+                        <constraint
+                                firstAttribute="height"
+                                constant="38"
+                                id="9y6-H8-Lkc" />
+                    </constraints>
+                    <state
+                            key="normal"
+                            title="Next">
+                        <color
+                                key="titleColor"
+                                white="1"
+                                alpha="1"
+                                colorSpace="custom"
+                                customColorSpace="genericGamma22GrayColorSpace" />
+                    </state>
+                    <connections>
+                        <action
+                                selector="onNext:"
+                                destination="iN0-l3-epB"
+                                eventType="touchUpInside"
+                                id="2mn-SY-TeD" />
+                    </connections>
+                </button>
+                <view
+                        contentMode="scaleToFill"
+                        translatesAutoresizingMaskIntoConstraints="NO"
+                        id="NNr-wP-JLY">
+                    <rect
+                            key="frame"
+                            x="0.0"
+                            y="243"
+                            width="375"
+                            height="376" />
+                    <color
+                            key="backgroundColor"
+                            white="1"
+                            alpha="1"
+                            colorSpace="custom"
+                            customColorSpace="genericGamma22GrayColorSpace" />
+                    <constraints>
+                        <constraint
+                                firstAttribute="height"
+                                constant="376"
+                                id="k3X-Gs-8z9" />
+                    </constraints>
+                </view>
+            </subviews>
+            <color
+                    key="backgroundColor"
+                    red="1"
+                    green="1"
+                    blue="1"
+                    alpha="1"
+                    colorSpace="custom"
+                    customColorSpace="sRGB" />
+            <constraints>
+                <constraint
+                        firstItem="AZg-fk-14R"
+                        firstAttribute="top"
+                        secondItem="6Ob-6T-Pza"
+                        secondAttribute="bottom"
+                        constant="16"
+                        id="0Mn-VQ-oMF" />
+                <constraint
+                        firstItem="6Ob-6T-Pza"
+                        firstAttribute="top"
+                        secondItem="gsk-EV-KGu"
+                        secondAttribute="bottom"
+                        constant="16"
+                        id="31H-T0-pU0" />
+                <constraint
+                        firstItem="NNr-wP-JLY"
+                        firstAttribute="top"
+                        secondItem="AZg-fk-14R"
+                        secondAttribute="bottom"
+                        constant="16"
+                        id="5Wa-Fe-bkW" />
+                <constraint
+                        firstItem="zLX-Sl-25I"
+                        firstAttribute="top"
+                        secondItem="vUN-kp-3ea"
+                        secondAttribute="top"
+                        constant="20"
+                        id="7Pf-D9-u9o" />
+                <constraint
+                        firstItem="AZg-fk-14R"
+                        firstAttribute="leading"
+                        secondItem="vUN-kp-3ea"
+                        secondAttribute="leading"
+                        constant="16"
+                        id="AGU-bm-P6k" />
+                <constraint
+                        firstItem="NNr-wP-JLY"
+                        firstAttribute="leading"
+                        secondItem="vUN-kp-3ea"
+                        secondAttribute="leading"
+                        id="AVi-TR-Z5y" />
+                <constraint
+                        firstItem="vUN-kp-3ea"
+                        firstAttribute="bottom"
+                        secondItem="QJi-aj-60E"
+                        secondAttribute="bottom"
+                        constant="16"
+                        id="AmI-Zt-SNs" />
+                <constraint
+                        firstItem="5Ey-Ce-FVG"
+                        firstAttribute="top"
+                        secondItem="6Ob-6T-Pza"
+                        secondAttribute="bottom"
+                        constant="16"
+                        id="CoV-IB-sZO" />
+                <constraint
+                        firstAttribute="width"
+                        constant="375"
+                        id="FdH-mp-nUf" />
+                <constraint
+                        firstAttribute="height"
+                        priority="250"
+                        constant="710"
+                        id="Gcp-tb-YlS" />
+                <constraint
+                        firstItem="gsk-EV-KGu"
+                        firstAttribute="trailing"
+                        secondItem="vUN-kp-3ea"
+                        secondAttribute="trailing"
+                        id="Jn3-zH-Wyk" />
+                <constraint
+                        firstItem="QJi-aj-60E"
+                        firstAttribute="leading"
+                        secondItem="vUN-kp-3ea"
+                        secondAttribute="leading"
+                        constant="16"
+                        id="LLS-9e-HRR" />
+                <constraint
+                        firstItem="vUN-kp-3ea"
+                        firstAttribute="trailing"
+                        secondItem="5Ey-Ce-FVG"
+                        secondAttribute="trailing"
+                        constant="16"
+                        id="P2G-LF-Hg2" />
+                <constraint
+                        firstItem="NNr-wP-JLY"
+                        firstAttribute="width"
+                        secondItem="iN0-l3-epB"
+                        secondAttribute="width"
+                        id="UMU-IQ-xqC" />
+                <constraint
+                        firstItem="gsk-EV-KGu"
+                        firstAttribute="leading"
+                        secondItem="vUN-kp-3ea"
+                        secondAttribute="leading"
+                        id="WE7-3V-8MA" />
+                <constraint
+                        firstItem="zLX-Sl-25I"
+                        firstAttribute="leading"
+                        secondItem="vUN-kp-3ea"
+                        secondAttribute="leading"
+                        constant="16"
+                        id="aEG-hM-Lbf" />
+                <constraint
+                        firstItem="vUN-kp-3ea"
+                        firstAttribute="trailing"
+                        secondItem="n5H-Xz-pXX"
+                        secondAttribute="trailing"
+                        constant="16"
+                        id="axA-9y-zKw" />
+                <constraint
+                        firstItem="n5H-Xz-pXX"
+                        firstAttribute="top"
+                        secondItem="zLX-Sl-25I"
+                        secondAttribute="bottom"
+                        constant="16"
+                        id="iqt-tZ-dhT" />
+                <constraint
+                        firstItem="vUN-kp-3ea"
+                        firstAttribute="trailing"
+                        secondItem="zLX-Sl-25I"
+                        secondAttribute="trailing"
+                        constant="16"
+                        id="pcf-0v-sdf" />
+                <constraint
+                        firstItem="QJi-aj-60E"
+                        firstAttribute="top"
+                        secondItem="NNr-wP-JLY"
+                        secondAttribute="bottom"
+                        constant="16"
+                        id="t4N-p5-JqN" />
+                <constraint
+                        firstItem="gsk-EV-KGu"
+                        firstAttribute="top"
+                        secondItem="n5H-Xz-pXX"
+                        secondAttribute="bottom"
+                        constant="16"
+                        id="uEu-dZ-urP" />
+                <constraint
+                        firstItem="vUN-kp-3ea"
+                        firstAttribute="trailing"
+                        secondItem="QJi-aj-60E"
+                        secondAttribute="trailing"
+                        constant="16"
+                        id="w0X-wJ-Cfg" />
+                <constraint
+                        firstItem="6Ob-6T-Pza"
+                        firstAttribute="centerX"
+                        secondItem="iN0-l3-epB"
+                        secondAttribute="centerX"
+                        id="x1N-Bj-KD4" />
+                <constraint
+                        firstItem="n5H-Xz-pXX"
+                        firstAttribute="leading"
+                        secondItem="vUN-kp-3ea"
+                        secondAttribute="leading"
+                        constant="16"
+                        id="yFg-RW-Iq3" />
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics" />
+            <viewLayoutGuide
+                    key="safeArea"
+                    id="vUN-kp-3ea" />
+            <connections>
+                <outlet
+                        property="badRatingLabel"
+                        destination="AZg-fk-14R"
+                        id="r2h-5H-aTd" />
+                <outlet
+                        property="goodRatingLabel"
+                        destination="5Ey-Ce-FVG"
+                        id="ywR-IX-ldL" />
+                <outlet
+                        property="nextButton"
+                        destination="QJi-aj-60E"
+                        id="HEB-Ab-dnu" />
+                <outlet
+                        property="photoContainerView"
+                        destination="NNr-wP-JLY"
+                        id="Htt-7l-R8d" />
+                <outlet
+                        property="questionLabel"
+                        destination="zLX-Sl-25I"
+                        id="pJX-0f-wIB" />
+                <outlet
+                        property="ratingView"
+                        destination="6Ob-6T-Pza"
+                        id="w5F-da-jD1" />
+                <outlet
+                        property="statementLabel"
+                        destination="n5H-Xz-pXX"
+                        id="hQc-Jb-GEa" />
+            </connections>
+            <point
+                    key="canvasLocation"
+                    x="53.600000000000001"
+                    y="60.26986506746627" />
+        </view>
+    </objects>
+</document>

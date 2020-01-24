@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<document
+        type="com.apple.InterfaceBuilder3.CocoaTouch.XIB"
+        version="3.0"
+        toolsVersion="14490.70"
+        targetRuntime="iOS.CocoaTouch"
+        propertyAccessControl="none"
+        useAutolayout="YES"
+        useTraitCollections="YES"
+        useSafeAreas="YES"
+        colorMatched="YES">
+    <device
+            id="retina6_1"
+            orientation="portrait">
+        <adaptation id="fullscreen" />
+    </device>
+    <dependencies>
+        <deployment identifier="iOS" />
+        <plugIn
+                identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin"
+                version="14490.49" />
+        <capability
+                name="documents saved in the Xcode 8 format"
+                minToolsVersion="8.0" />
+    </dependencies>
+    <objects>
+        <placeholder
+                placeholderIdentifier="IBFilesOwner"
+                id="-1"
+                userLabel="File's Owner" />
+        <placeholder
+                placeholderIdentifier="IBFirstResponder"
+                id="-2"
+                customClass="UIResponder" />
+        <tableViewCell
+                clipsSubviews="YES"
+                contentMode="scaleToFill"
+                preservesSuperviewLayoutMargins="YES"
+                selectionStyle="default"
+                indentationWidth="10"
+                reuseIdentifier="SingleChoiceOptionView"
+                id="99M-b3-XQE"
+                customClass="SingleChoiceOptionView"
+                customModule="LiveShopperExample"
+                customModuleProvider="target">
+            <rect
+                    key="frame"
+                    x="0.0"
+                    y="0.0"
+                    width="414"
+                    height="46.5" />
+            <autoresizingMask key="autoresizingMask" />
+            <tableViewCellContentView
+                    key="contentView"
+                    opaque="NO"
+                    clipsSubviews="YES"
+                    multipleTouchEnabled="YES"
+                    contentMode="center"
+                    preservesSuperviewLayoutMargins="YES"
+                    insetsLayoutMarginsFromSafeArea="NO"
+                    tableViewCell="99M-b3-XQE"
+                    id="KYA-dJ-Kd5">
+                <rect
+                        key="frame"
+                        x="0.0"
+                        y="0.0"
+                        width="414"
+                        height="46" />
+                <autoresizingMask key="autoresizingMask" />
+                <subviews>
+                    <label
+                            opaque="NO"
+                            userInteractionEnabled="NO"
+                            contentMode="left"
+                            horizontalHuggingPriority="251"
+                            verticalHuggingPriority="251"
+                            text="Label"
+                            textAlignment="natural"
+                            lineBreakMode="tailTruncation"
+                            baselineAdjustment="alignBaselines"
+                            adjustsFontSizeToFit="NO"
+                            translatesAutoresizingMaskIntoConstraints="NO"
+                            id="n9Y-JO-LDX">
+                        <rect
+                                key="frame"
+                                x="52"
+                                y="16"
+                                width="346"
+                                height="14" />
+                        <fontDescription
+                                key="fontDescription"
+                                type="system"
+                                pointSize="20" />
+                        <color
+                                key="textColor"
+                                white="0.33333333329999998"
+                                alpha="1"
+                                colorSpace="custom"
+                                customColorSpace="genericGamma22GrayColorSpace" />
+                        <nil key="highlightedColor" />
+                    </label>
+                    <view
+                            contentMode="scaleToFill"
+                            translatesAutoresizingMaskIntoConstraints="NO"
+                            id="6Nc-iO-428"
+                            customClass="LsRadioButton"
+                            customModule="LiveShopperExample"
+                            customModuleProvider="target">
+                        <rect
+                                key="frame"
+                                x="16"
+                                y="13"
+                                width="20"
+                                height="20" />
+                        <color
+                                key="backgroundColor"
+                                white="1"
+                                alpha="1"
+                                colorSpace="custom"
+                                customColorSpace="genericGamma22GrayColorSpace" />
+                        <constraints>
+                            <constraint
+                                    firstAttribute="width"
+                                    constant="20"
+                                    id="1hK-gf-8Ry" />
+                            <constraint
+                                    firstAttribute="height"
+                                    constant="20"
+                                    id="qtU-wz-1oR" />
+                        </constraints>
+                        <connections>
+                            <action
+                                    selector="radioTapped:"
+                                    destination="99M-b3-XQE"
+                                    eventType="valueChanged"
+                                    id="bdw-gR-dLQ" />
+                        </connections>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint
+                            firstAttribute="bottom"
+                            secondItem="n9Y-JO-LDX"
+                            secondAttribute="bottom"
+                            constant="16"
+                            id="3Ep-vq-8C1" />
+                    <constraint
+                            firstItem="n9Y-JO-LDX"
+                            firstAttribute="centerY"
+                            secondItem="6Nc-iO-428"
+                            secondAttribute="centerY"
+                            id="Dzp-0O-TG8" />
+                    <constraint
+                            firstItem="n9Y-JO-LDX"
+                            firstAttribute="leading"
+                            secondItem="6Nc-iO-428"
+                            secondAttribute="trailing"
+                            constant="16"
+                            id="ML3-jL-p9s" />
+                    <constraint
+                            firstItem="n9Y-JO-LDX"
+                            firstAttribute="top"
+                            secondItem="KYA-dJ-Kd5"
+                            secondAttribute="top"
+                            constant="16"
+                            id="Rvp-4Q-kQF" />
+                    <constraint
+                            firstItem="6Nc-iO-428"
+                            firstAttribute="leading"
+                            secondItem="KYA-dJ-Kd5"
+                            secondAttribute="leading"
+                            constant="16"
+                            id="bs4-3G-cev" />
+                    <constraint
+                            firstAttribute="trailing"
+                            secondItem="n9Y-JO-LDX"
+                            secondAttribute="trailing"
+                            constant="16"
+                            id="lch-5F-2Si" />
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet
+                        property="radioButton"
+                        destination="6Nc-iO-428"
+                        id="e9v-q9-Ypd" />
+                <outlet
+                        property="textLabel"
+                        destination="n9Y-JO-LDX"
+                        id="tY8-wQ-cVl" />
+            </connections>
+            <point
+                    key="canvasLocation"
+                    x="47.826086956521742"
+                    y="44.866071428571423" />
+        </tableViewCell>
+    </objects>
+</document>

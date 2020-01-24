@@ -1,0 +1,482 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<document
+        type="com.apple.InterfaceBuilder3.CocoaTouch.XIB"
+        version="3.0"
+        toolsVersion="15702"
+        targetRuntime="iOS.CocoaTouch"
+        propertyAccessControl="none"
+        useAutolayout="YES"
+        useTraitCollections="YES"
+        useSafeAreas="YES"
+        colorMatched="YES">
+    <device
+            id="retina4_7"
+            orientation="portrait"
+            appearance="light" />
+    <dependencies>
+        <plugIn
+                identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin"
+                version="15704" />
+        <capability
+                name="Safe area layout guides"
+                minToolsVersion="9.0" />
+        <capability
+                name="documents saved in the Xcode 8 format"
+                minToolsVersion="8.0" />
+    </dependencies>
+    <objects>
+        <placeholder
+                placeholderIdentifier="IBFilesOwner"
+                id="-1"
+                userLabel="File's Owner" />
+        <placeholder
+                placeholderIdentifier="IBFirstResponder"
+                id="-2"
+                customClass="UIResponder" />
+        <view
+                contentMode="scaleToFill"
+                translatesAutoresizingMaskIntoConstraints="NO"
+                id="iN0-l3-epB"
+                customClass="OpenEndedView"
+                customModule="LiveShopperExample"
+                customModuleProvider="target">
+            <rect
+                    key="frame"
+                    x="0.0"
+                    y="0.0"
+                    width="375"
+                    height="688" />
+            <subviews>
+                <label
+                        opaque="NO"
+                        userInteractionEnabled="NO"
+                        contentMode="left"
+                        horizontalHuggingPriority="251"
+                        verticalHuggingPriority="251"
+                        text="Enter in some text for an &quot;open ended&quot; question"
+                        textAlignment="natural"
+                        lineBreakMode="tailTruncation"
+                        numberOfLines="0"
+                        baselineAdjustment="alignBaselines"
+                        adjustsFontSizeToFit="NO"
+                        translatesAutoresizingMaskIntoConstraints="NO"
+                        id="eq4-ub-Zel">
+                    <rect
+                            key="frame"
+                            x="16"
+                            y="16"
+                            width="343"
+                            height="40" />
+                    <constraints>
+                        <constraint
+                                firstAttribute="height"
+                                relation="greaterThanOrEqual"
+                                constant="20"
+                                id="uwV-44-loi" />
+                    </constraints>
+                    <fontDescription
+                            key="fontDescription"
+                            type="system"
+                            pointSize="17" />
+                    <color
+                            key="textColor"
+                            name="systemYellowColor"
+                            catalog="System"
+                            colorSpace="catalog" />
+                    <nil key="highlightedColor" />
+                </label>
+                <textView
+                        clipsSubviews="YES"
+                        multipleTouchEnabled="YES"
+                        contentMode="scaleToFill"
+                        textAlignment="natural"
+                        translatesAutoresizingMaskIntoConstraints="NO"
+                        id="o65-Xt-tzV">
+                    <rect
+                            key="frame"
+                            x="16"
+                            y="72"
+                            width="343"
+                            height="120" />
+                    <color
+                            key="backgroundColor"
+                            white="1"
+                            alpha="1"
+                            colorSpace="custom"
+                            customColorSpace="genericGamma22GrayColorSpace" />
+                    <constraints>
+                        <constraint
+                                firstAttribute="height"
+                                constant="120"
+                                id="H9e-8K-pPM" />
+                    </constraints>
+                    <fontDescription
+                            key="fontDescription"
+                            type="system"
+                            pointSize="16" />
+                    <textInputTraits
+                            key="textInputTraits"
+                            autocapitalizationType="sentences" />
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute
+                                type="number"
+                                keyPath="layer.borderWidth">
+                            <integer
+                                    key="value"
+                                    value="1" />
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute
+                                type="color"
+                                keyPath="layer.borderColor">
+                            <color
+                                    key="value"
+                                    white="0.0"
+                                    alpha="1"
+                                    colorSpace="custom"
+                                    customColorSpace="genericGamma22GrayColorSpace" />
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <outlet
+                                property="delegate"
+                                destination="iN0-l3-epB"
+                                id="7QU-52-iCS" />
+                    </connections>
+                </textView>
+                <label
+                        opaque="NO"
+                        userInteractionEnabled="NO"
+                        contentMode="left"
+                        horizontalHuggingPriority="251"
+                        verticalHuggingPriority="251"
+                        text="Label"
+                        textAlignment="natural"
+                        lineBreakMode="tailTruncation"
+                        baselineAdjustment="alignBaselines"
+                        adjustsFontSizeToFit="NO"
+                        translatesAutoresizingMaskIntoConstraints="NO"
+                        id="feP-RV-pot">
+                    <rect
+                            key="frame"
+                            x="22"
+                            y="78"
+                            width="39.5"
+                            height="19.5" />
+                    <fontDescription
+                            key="fontDescription"
+                            type="system"
+                            pointSize="16" />
+                    <color
+                            key="textColor"
+                            white="0.66666666666666663"
+                            alpha="1"
+                            colorSpace="custom"
+                            customColorSpace="genericGamma22GrayColorSpace" />
+                    <nil key="highlightedColor" />
+                </label>
+                <label
+                        opaque="NO"
+                        userInteractionEnabled="NO"
+                        contentMode="left"
+                        horizontalHuggingPriority="251"
+                        verticalHuggingPriority="251"
+                        text="Label"
+                        textAlignment="natural"
+                        lineBreakMode="tailTruncation"
+                        numberOfLines="0"
+                        baselineAdjustment="alignBaselines"
+                        adjustsFontSizeToFit="NO"
+                        translatesAutoresizingMaskIntoConstraints="NO"
+                        id="LdW-g5-4Q4">
+                    <rect
+                            key="frame"
+                            x="16"
+                            y="208"
+                            width="343"
+                            height="18" />
+                    <constraints>
+                        <constraint
+                                firstAttribute="height"
+                                relation="greaterThanOrEqual"
+                                constant="18"
+                                id="enn-ZC-P1m" />
+                    </constraints>
+                    <fontDescription
+                            key="fontDescription"
+                            type="system"
+                            pointSize="15" />
+                    <color
+                            key="textColor"
+                            white="0.66666666669999997"
+                            alpha="1"
+                            colorSpace="custom"
+                            customColorSpace="genericGamma22GrayColorSpace" />
+                    <nil key="highlightedColor" />
+                </label>
+                <button
+                        opaque="NO"
+                        contentMode="scaleToFill"
+                        contentHorizontalAlignment="center"
+                        contentVerticalAlignment="center"
+                        buttonType="roundedRect"
+                        lineBreakMode="middleTruncation"
+                        translatesAutoresizingMaskIntoConstraints="NO"
+                        id="RPu-Hk-xi4"
+                        customClass="LsButton"
+                        customModule="LiveShopperExample"
+                        customModuleProvider="target">
+                    <rect
+                            key="frame"
+                            x="24"
+                            y="634"
+                            width="327"
+                            height="38" />
+                    <color
+                            key="backgroundColor"
+                            red="0.0"
+                            green="0.47843137250000001"
+                            blue="1"
+                            alpha="1"
+                            colorSpace="custom"
+                            customColorSpace="sRGB" />
+                    <constraints>
+                        <constraint
+                                firstAttribute="height"
+                                constant="38"
+                                id="7J9-cU-p9F" />
+                    </constraints>
+                    <state
+                            key="normal"
+                            title="Next">
+                        <color
+                                key="titleColor"
+                                white="1"
+                                alpha="1"
+                                colorSpace="custom"
+                                customColorSpace="genericGamma22GrayColorSpace" />
+                    </state>
+                    <connections>
+                        <action
+                                selector="onNext:"
+                                destination="iN0-l3-epB"
+                                eventType="touchUpInside"
+                                id="J1p-Zn-G1g" />
+                    </connections>
+                </button>
+                <view
+                        contentMode="scaleToFill"
+                        translatesAutoresizingMaskIntoConstraints="NO"
+                        id="8aR-RV-g4T">
+                    <rect
+                            key="frame"
+                            x="0.0"
+                            y="242"
+                            width="375"
+                            height="376" />
+                    <color
+                            key="backgroundColor"
+                            white="1"
+                            alpha="1"
+                            colorSpace="custom"
+                            customColorSpace="genericGamma22GrayColorSpace" />
+                    <constraints>
+                        <constraint
+                                firstAttribute="height"
+                                constant="376"
+                                id="RTD-fA-rMN" />
+                    </constraints>
+                </view>
+            </subviews>
+            <color
+                    key="backgroundColor"
+                    red="1"
+                    green="1"
+                    blue="1"
+                    alpha="1"
+                    colorSpace="custom"
+                    customColorSpace="sRGB" />
+            <constraints>
+                <constraint
+                        firstItem="8aR-RV-g4T"
+                        firstAttribute="trailing"
+                        secondItem="vUN-kp-3ea"
+                        secondAttribute="trailing"
+                        id="30Y-JS-eaU" />
+                <constraint
+                        firstItem="feP-RV-pot"
+                        firstAttribute="top"
+                        secondItem="o65-Xt-tzV"
+                        secondAttribute="top"
+                        constant="6"
+                        id="3Jh-Pk-9m5" />
+                <constraint
+                        firstAttribute="height"
+                        relation="greaterThanOrEqual"
+                        priority="250"
+                        constant="667"
+                        id="6Oe-Kj-6lj" />
+                <constraint
+                        firstItem="8aR-RV-g4T"
+                        firstAttribute="width"
+                        secondItem="iN0-l3-epB"
+                        secondAttribute="width"
+                        id="E5H-uj-CUV" />
+                <constraint
+                        firstItem="o65-Xt-tzV"
+                        firstAttribute="top"
+                        secondItem="eq4-ub-Zel"
+                        secondAttribute="bottom"
+                        constant="16"
+                        id="I3k-nP-fcp" />
+                <constraint
+                        firstItem="8aR-RV-g4T"
+                        firstAttribute="leading"
+                        secondItem="vUN-kp-3ea"
+                        secondAttribute="leading"
+                        id="IJc-x0-Nrk" />
+                <constraint
+                        firstItem="RPu-Hk-xi4"
+                        firstAttribute="top"
+                        secondItem="8aR-RV-g4T"
+                        secondAttribute="bottom"
+                        constant="16"
+                        id="IXK-23-dIN" />
+                <constraint
+                        firstItem="feP-RV-pot"
+                        firstAttribute="leading"
+                        secondItem="o65-Xt-tzV"
+                        secondAttribute="leading"
+                        constant="6"
+                        id="IwX-sd-ZKS" />
+                <constraint
+                        firstItem="eq4-ub-Zel"
+                        firstAttribute="top"
+                        secondItem="vUN-kp-3ea"
+                        secondAttribute="top"
+                        constant="16"
+                        id="SY6-ia-MFe" />
+                <constraint
+                        firstItem="LdW-g5-4Q4"
+                        firstAttribute="leading"
+                        secondItem="vUN-kp-3ea"
+                        secondAttribute="leading"
+                        constant="16"
+                        id="SvE-be-ORj" />
+                <constraint
+                        firstItem="8aR-RV-g4T"
+                        firstAttribute="top"
+                        secondItem="LdW-g5-4Q4"
+                        secondAttribute="bottom"
+                        constant="16"
+                        id="TeC-LI-E2Z" />
+                <constraint
+                        firstItem="vUN-kp-3ea"
+                        firstAttribute="trailing"
+                        secondItem="LdW-g5-4Q4"
+                        secondAttribute="trailing"
+                        constant="16"
+                        id="U72-Zd-6il" />
+                <constraint
+                        firstItem="o65-Xt-tzV"
+                        firstAttribute="leading"
+                        secondItem="vUN-kp-3ea"
+                        secondAttribute="leading"
+                        constant="16"
+                        id="UE1-1a-Kmx" />
+                <constraint
+                        firstItem="LdW-g5-4Q4"
+                        firstAttribute="top"
+                        secondItem="o65-Xt-tzV"
+                        secondAttribute="bottom"
+                        constant="16"
+                        id="c1n-FB-x9W" />
+                <constraint
+                        firstItem="RPu-Hk-xi4"
+                        firstAttribute="centerX"
+                        secondItem="iN0-l3-epB"
+                        secondAttribute="centerX"
+                        id="cx6-c3-RAL" />
+                <constraint
+                        firstItem="vUN-kp-3ea"
+                        firstAttribute="trailing"
+                        secondItem="RPu-Hk-xi4"
+                        secondAttribute="trailing"
+                        constant="24"
+                        id="eWh-rZ-ZTC" />
+                <constraint
+                        firstItem="vUN-kp-3ea"
+                        firstAttribute="trailing"
+                        secondItem="eq4-ub-Zel"
+                        secondAttribute="trailing"
+                        constant="16"
+                        id="fcW-3Q-9yY" />
+                <constraint
+                        firstItem="vUN-kp-3ea"
+                        firstAttribute="trailing"
+                        secondItem="o65-Xt-tzV"
+                        secondAttribute="trailing"
+                        constant="16"
+                        id="ry3-v0-HhB" />
+                <constraint
+                        firstAttribute="width"
+                        constant="375"
+                        id="s24-Tk-FPo" />
+                <constraint
+                        firstItem="vUN-kp-3ea"
+                        firstAttribute="bottom"
+                        secondItem="RPu-Hk-xi4"
+                        secondAttribute="bottom"
+                        constant="16"
+                        id="tH4-7Z-qHI" />
+                <constraint
+                        firstItem="RPu-Hk-xi4"
+                        firstAttribute="leading"
+                        secondItem="vUN-kp-3ea"
+                        secondAttribute="leading"
+                        constant="24"
+                        id="uxs-eu-ZgX" />
+                <constraint
+                        firstItem="eq4-ub-Zel"
+                        firstAttribute="leading"
+                        secondItem="vUN-kp-3ea"
+                        secondAttribute="leading"
+                        constant="16"
+                        id="v56-CF-qgx" />
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics" />
+            <viewLayoutGuide
+                    key="safeArea"
+                    id="vUN-kp-3ea" />
+            <connections>
+                <outlet
+                        property="nextButton"
+                        destination="RPu-Hk-xi4"
+                        id="VFO-KN-KRJ" />
+                <outlet
+                        property="photoContainerView"
+                        destination="8aR-RV-g4T"
+                        id="8Z8-SG-whl" />
+                <outlet
+                        property="placeholderLabel"
+                        destination="feP-RV-pot"
+                        id="kLJ-ZQ-Dqp" />
+                <outlet
+                        property="questionLabel"
+                        destination="eq4-ub-Zel"
+                        id="y8f-gF-M0P" />
+                <outlet
+                        property="rangeLabel"
+                        destination="LdW-g5-4Q4"
+                        id="EKI-jQ-7im" />
+                <outlet
+                        property="textView"
+                        destination="o65-Xt-tzV"
+                        id="Qpk-YC-mcn" />
+            </connections>
+            <point
+                    key="canvasLocation"
+                    x="133.59999999999999"
+                    y="107.94602698650675" />
+        </view>
+    </objects>
+</document>
