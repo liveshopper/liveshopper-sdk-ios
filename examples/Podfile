@@ -1,0 +1,10 @@
+use_frameworks!
+
+platform :ios, '10.0'
+
+target 'LiveShopperExample' do
+    pod 'LiveShopperSDK', :path => '../'
+    pod 'Cosmos'
+    pod 'M13Checkbox'
+    pod 'QuickTableViewController'
+end
