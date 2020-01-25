@@ -1,0 +1,107 @@
+/* Class = "UINavigationItem"; title = "Tasks"; ObjectID = "0pE-1i-dQx"; */
+"0pE-1i-dQx.title" = "Tasks";
+
+/* Class = "UILabel"; text = "This task is only available for Client Associates!"; ObjectID = "AXM-2y-fng"; */
+"AXM-2y-fng.text" = "This task is only available for Client Associates!";
+
+/* Class = "UILabel"; text = "You've earned a reward!"; ObjectID = "BVV-RP-U2o"; */
+"BVV-RP-U2o.text" = "You've earned a reward!";
+
+/* Class = "UILabel"; text = "Upon completion you can select one of the following rewards."; ObjectID = "DKn-3N-Wht"; */
+"DKn-3N-Wht.text" = "Upon completion you can select one of the following rewards.";
+
+/* Class = "UILabel"; text = "Task Title"; ObjectID = "EDd-SA-EH7"; */
+"EDd-SA-EH7.text" = "Task Title";
+
+/* Class = "UINavigationItem"; title = "Task Overview"; ObjectID = "G8y-QR-u8I"; */
+"G8y-QR-u8I.title" = "Task Overview";
+
+/* Class = "UILabel"; text = "Distance"; ObjectID = "Gcp-L9-KYb"; */
+"Gcp-L9-KYb.text" = "Distance";
+
+/* Class = "UITabBarItem"; title = "Map"; ObjectID = "HrQ-Gu-Frc"; */
+"HrQ-Gu-Frc.title" = "Map";
+
+/* Class = "UILabel"; text = "Questions"; ObjectID = "IM6-0L-oON"; */
+"IM6-0L-oON.text" = "Questions";
+
+/* Class = "UILabel"; text = "Question 1 of 10"; ObjectID = "Mc8-qM-ieY"; */
+"Mc8-qM-ieY.text" = "Question 1 of 10";
+
+/* Class = "UITabBarItem"; title = "All Tasks"; ObjectID = "NNe-pE-qkR"; */
+"NNe-pE-qkR.title" = "All Tasks";
+
+/* Class = "UILabel"; text = "address"; ObjectID = "NvD-eY-Yy8"; */
+"NvD-eY-Yy8.text" = "address";
+
+/* Class = "UILabel"; text = "Location Name"; ObjectID = "Rao-KP-PCA"; */
+"Rao-KP-PCA.text" = "Location Name";
+
+/* Class = "UILabel"; text = "Pre-Task Checklist"; ObjectID = "TTU-Eg-6aH"; */
+"TTU-Eg-6aH.text" = "Pre-Task Checklist";
+
+/* Class = "UINavigationItem"; title = "Rewards"; ObjectID = "VcA-eI-SUx"; */
+"VcA-eI-SUx.title" = "Rewards";
+
+/* Class = "UILabel"; text = "Location Name"; ObjectID = "VnR-GR-dr9"; */
+"VnR-GR-dr9.text" = "Location Name";
+
+/* Class = "UILabel"; text = "Other Text"; ObjectID = "WbY-1J-YHg"; */
+"WbY-1J-YHg.text" = "Other Text";
+
+/* Class = "UILabel"; text = "Please read each statment carefully and leave a check mark by each to show that you  understand what is expected for this task"; ObjectID = "Z3k-3K-fMn"; */
+"Z3k-3K-fMn.text" = "Please read each statment carefully and leave a check mark by each to show that you  understand what is expected for this task";
+
+/* Class = "UILabel"; text = "Description"; ObjectID = "ZgN-Us-x81"; */
+"ZgN-Us-x81.text" = "Description";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "ai6-Xb-1PZ"; */
+"ai6-Xb-1PZ.text" = "Title";
+
+/* Class = "UIButton"; normalTitle = "Accept Task"; ObjectID = "aks-c2-l42"; */
+"aks-c2-l42.normalTitle" = "Accept Task";
+
+/* Class = "UINavigationItem"; title = "Tasks"; ObjectID = "e0f-2c-L1W"; */
+"e0f-2c-L1W.title" = "Tasks";
+
+/* Class = "UIButton"; normalTitle = "Go"; ObjectID = "f2g-02-zsO"; */
+"f2g-02-zsO.normalTitle" = "Go";
+
+/* Class = "UILabel"; text = "Tap any one of the following to claim it"; ObjectID = "fCT-bL-gqY"; */
+"fCT-bL-gqY.text" = "Tap any one of the following to claim it";
+
+/* Class = "UILabel"; text = "Claimable Rewards"; ObjectID = "grP-fI-7iD"; */
+"grP-fI-7iD.text" = "Claimable Rewards";
+
+/* Class = "UILabel"; text = "Header"; ObjectID = "hIF-Ra-5Ef"; */
+"hIF-Ra-5Ef.text" = "Header";
+
+/* Class = "UILabel"; text = "X.XX miles away"; ObjectID = "heO-T4-LkU"; */
+"heO-T4-LkU.text" = "X.XX miles away";
+
+/* Class = "UILabel"; text = "This is the task title"; ObjectID = "i9n-Sa-Rez"; */
+"i9n-Sa-Rez.text" = "This is the task title";
+
+/* Class = "UILabel"; text = "Logging In..."; ObjectID = "mYe-tr-wm1"; */
+"mYe-tr-wm1.text" = "Logging In...";
+
+/* Class = "UILabel"; text = "Subtitle"; ObjectID = "o0M-sy-j0A"; */
+"o0M-sy-j0A.text" = "Subtitle";
+
+/* Class = "UILabel"; text = "Rewards"; ObjectID = "otD-68-Qlb"; */
+"otD-68-Qlb.text" = "Rewards";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "rHt-sV-i96"; */
+"rHt-sV-i96.text" = "Title";
+
+/* Class = "UILabel"; text = "The following questions will be asked. Please be sure to review these questions to provide an accurate response:"; ObjectID = "tSw-XE-eeA"; */
+"tSw-XE-eeA.text" = "The following questions will be asked. Please be sure to review these questions to provide an accurate response:";
+
+/* Class = "UITabBarItem"; title = "Map"; ObjectID = "tgJ-KJ-Age"; */
+"tgJ-KJ-Age.title" = "Map";
+
+/* Class = "UITabBarItem"; title = "All Tasks"; ObjectID = "vTo-ax-l0h"; */
+"vTo-ax-l0h.title" = "All Tasks";
+
+/* Class = "UIBarButtonItem"; title = "Cancel"; ObjectID = "xyx-4j-0g4"; */
+"xyx-4j-0g4.title" = "Cancel";

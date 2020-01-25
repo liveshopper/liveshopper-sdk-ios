@@ -1,0 +1,11 @@
+# ignore all "dot" files/directories
+.*
+.**/**
+
+# whitelist desired "dot" files
+!.gitignore
+!.gitkeep
+
+# excluded directories
+bin/
+build/

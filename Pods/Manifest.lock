@@ -1,0 +1,24 @@
+PODS:
+  - Cosmos (21.0.0)
+  - M13Checkbox (3.4.0)
+  - QuickTableViewController (1.2.1)
+
+DEPENDENCIES:
+  - Cosmos
+  - M13Checkbox
+  - QuickTableViewController
+
+SPEC REPOS:
+  trunk:
+    - Cosmos
+    - M13Checkbox
+    - QuickTableViewController
+
+SPEC CHECKSUMS:
+  Cosmos: 3dfb6e4ba48bd48b8c9aa2a77048ae11ed114f96
+  M13Checkbox: 6f59404540ac98ba83a3d1afac335895a40c6a5d
+  QuickTableViewController: e633756f35ddaafc5997f71bab9b0e512439ed85
+
+PODFILE CHECKSUM: 0414cf8bc3f3080a533ce2412e90db81ee1cee84
+
+COCOAPODS: 1.8.4

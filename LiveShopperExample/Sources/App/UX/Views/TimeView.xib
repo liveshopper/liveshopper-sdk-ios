@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<document
+        type="com.apple.InterfaceBuilder3.CocoaTouch.XIB"
+        version="3.0"
+        toolsVersion="14490.70"
+        targetRuntime="iOS.CocoaTouch"
+        propertyAccessControl="none"
+        useAutolayout="YES"
+        useTraitCollections="YES"
+        colorMatched="YES">
+    <device
+            id="retina4_7"
+            orientation="portrait">
+        <adaptation id="fullscreen" />
+    </device>
+    <dependencies>
+        <deployment identifier="iOS" />
+        <plugIn
+                identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin"
+                version="14490.49" />
+        <capability
+                name="documents saved in the Xcode 8 format"
+                minToolsVersion="8.0" />
+    </dependencies>
+    <objects>
+        <placeholder
+                placeholderIdentifier="IBFilesOwner"
+                id="-1"
+                userLabel="File's Owner" />
+        <placeholder
+                placeholderIdentifier="IBFirstResponder"
+                id="-2"
+                customClass="UIResponder" />
+        <view
+                contentMode="scaleToFill"
+                insetsLayoutMarginsFromSafeArea="NO"
+                translatesAutoresizingMaskIntoConstraints="NO"
+                id="DuU-IR-uIo"
+                customClass="TimeView"
+                customModule="LiveShopperExample"
+                customModuleProvider="target">
+            <rect
+                    key="frame"
+                    x="0.0"
+                    y="0.0"
+                    width="375"
+                    height="668" />
+            <subviews>
+                <label
+                        opaque="NO"
+                        userInteractionEnabled="NO"
+                        contentMode="left"
+                        horizontalHuggingPriority="251"
+                        verticalHuggingPriority="251"
+                        text="What time is it?"
+                        textAlignment="natural"
+                        lineBreakMode="tailTruncation"
+                        baselineAdjustment="alignBaselines"
+                        adjustsFontSizeToFit="NO"
+                        translatesAutoresizingMaskIntoConstraints="NO"
+                        id="MyZ-dK-XTo">
+                    <rect
+                            key="frame"
+                            x="16"
+                            y="16"
+                            width="343"
+                            height="20" />
+                    <constraints>
+                        <constraint
+                                firstAttribute="height"
+                                relation="greaterThanOrEqual"
+                                constant="20"
+                                id="zKx-mt-cwc" />
+                    </constraints>
+                    <fontDescription
+                            key="fontDescription"
+                            type="system"
+                            weight="semibold"
+                            pointSize="17" />
+                    <color
+                            key="textColor"
+                            name="systemYellowColor"
+                            catalog="System"
+                            colorSpace="catalog" />
+                    <nil key="highlightedColor" />
+                </label>
+                <datePicker
+                        contentMode="scaleToFill"
+                        contentHorizontalAlignment="center"
+                        contentVerticalAlignment="center"
+                        datePickerMode="time"
+                        minuteInterval="1"
+                        translatesAutoresizingMaskIntoConstraints="NO"
+                        id="3zk-Hy-fqT">
+                    <rect
+                            key="frame"
+                            x="0.0"
+                            y="44"
+                            width="375"
+                            height="162" />
+                    <constraints>
+                        <constraint
+                                firstAttribute="height"
+                                constant="162"
+                                id="K3i-A1-q2M" />
+                    </constraints>
+                    <date
+                            key="date"
+                            timeIntervalSinceReferenceDate="569354930.88256395">
+                        <!--2019-01-16 18:08:50 +0000-->
+                    </date>
+                </datePicker>
+                <button
+                        opaque="NO"
+                        contentMode="scaleToFill"
+                        contentHorizontalAlignment="center"
+                        contentVerticalAlignment="center"
+                        buttonType="roundedRect"
+                        lineBreakMode="middleTruncation"
+                        translatesAutoresizingMaskIntoConstraints="NO"
+                        id="UMx-Pz-2nj"
+                        customClass="LsButton"
+                        customModule="LiveShopperExample"
+                        customModuleProvider="target">
+                    <rect
+                            key="frame"
+                            x="16"
+                            y="614"
+                            width="343"
+                            height="38" />
+                    <color
+                            key="backgroundColor"
+                            red="0.0"
+                            green="0.47843137250000001"
+                            blue="1"
+                            alpha="1"
+                            colorSpace="custom"
+                            customColorSpace="sRGB" />
+                    <constraints>
+                        <constraint
+                                firstAttribute="height"
+                                constant="38"
+                                id="Rmt-4X-I6p" />
+                    </constraints>
+                    <state
+                            key="normal"
+                            title="Next">
+                        <color
+                                key="titleColor"
+                                white="1"
+                                alpha="1"
+                                colorSpace="custom"
+                                customColorSpace="genericGamma22GrayColorSpace" />
+                    </state>
+                    <connections>
+                        <action
+                                selector="onNext:"
+                                destination="DuU-IR-uIo"
+                                eventType="touchUpInside"
+                                id="Y6S-9B-J9I" />
+                    </connections>
+                </button>
+                <view
+                        contentMode="scaleToFill"
+                        translatesAutoresizingMaskIntoConstraints="NO"
+                        id="juf-bv-uon">
+                    <rect
+                            key="frame"
+                            x="0.0"
+                            y="222"
+                            width="375"
+                            height="376" />
+                    <color
+                            key="backgroundColor"
+                            white="1"
+                            alpha="1"
+                            colorSpace="custom"
+                            customColorSpace="genericGamma22GrayColorSpace" />
+                    <constraints>
+                        <constraint
+                                firstAttribute="height"
+                                constant="376"
+                                id="rGx-hZ-mxp" />
+                    </constraints>
+                </view>
+            </subviews>
+            <color
+                    key="backgroundColor"
+                    red="1"
+                    green="1"
+                    blue="1"
+                    alpha="1"
+                    colorSpace="custom"
+                    customColorSpace="sRGB" />
+            <constraints>
+                <constraint
+                        firstItem="3zk-Hy-fqT"
+                        firstAttribute="leading"
+                        secondItem="DuU-IR-uIo"
+                        secondAttribute="leading"
+                        id="8kN-CB-63N" />
+                <constraint
+                        firstAttribute="width"
+                        constant="375"
+                        id="Bju-Zf-xui" />
+                <constraint
+                        firstItem="MyZ-dK-XTo"
+                        firstAttribute="leading"
+                        secondItem="DuU-IR-uIo"
+                        secondAttribute="leading"
+                        constant="16"
+                        id="CFq-h0-PD4" />
+                <constraint
+                        firstItem="juf-bv-uon"
+                        firstAttribute="trailing"
+                        secondItem="DuU-IR-uIo"
+                        secondAttribute="trailing"
+                        id="DHf-Hy-GOU" />
+                <constraint
+                        firstItem="3zk-Hy-fqT"
+                        firstAttribute="trailing"
+                        secondItem="DuU-IR-uIo"
+                        secondAttribute="trailing"
+                        id="FNT-7L-3ea" />
+                <constraint
+                        firstAttribute="trailing"
+                        secondItem="MyZ-dK-XTo"
+                        secondAttribute="trailing"
+                        constant="16"
+                        id="FmC-Gk-WyE" />
+                <constraint
+                        firstItem="juf-bv-uon"
+                        firstAttribute="leading"
+                        secondItem="DuU-IR-uIo"
+                        secondAttribute="leading"
+                        id="J0v-Ku-ikp" />
+                <constraint
+                        firstAttribute="trailing"
+                        secondItem="UMx-Pz-2nj"
+                        secondAttribute="trailing"
+                        constant="16"
+                        id="JoQ-nm-VMi" />
+                <constraint
+                        firstItem="UMx-Pz-2nj"
+                        firstAttribute="leading"
+                        secondItem="DuU-IR-uIo"
+                        secondAttribute="leading"
+                        constant="16"
+                        id="PLx-Ki-PKo" />
+                <constraint
+                        firstItem="UMx-Pz-2nj"
+                        firstAttribute="top"
+                        secondItem="juf-bv-uon"
+                        secondAttribute="bottom"
+                        constant="16"
+                        id="PPL-90-byt" />
+                <constraint
+                        firstAttribute="bottom"
+                        secondItem="UMx-Pz-2nj"
+                        secondAttribute="bottom"
+                        constant="16"
+                        id="V2E-Ms-Q7m" />
+                <constraint
+                        firstAttribute="height"
+                        relation="greaterThanOrEqual"
+                        priority="250"
+                        constant="668"
+                        id="XN0-6m-OE8" />
+                <constraint
+                        firstItem="3zk-Hy-fqT"
+                        firstAttribute="top"
+                        secondItem="MyZ-dK-XTo"
+                        secondAttribute="bottom"
+                        constant="8"
+                        id="b2b-LW-eao" />
+                <constraint
+                        firstItem="MyZ-dK-XTo"
+                        firstAttribute="top"
+                        secondItem="DuU-IR-uIo"
+                        secondAttribute="top"
+                        constant="16"
+                        id="eF6-l9-Pu9" />
+                <constraint
+                        firstItem="juf-bv-uon"
+                        firstAttribute="top"
+                        secondItem="3zk-Hy-fqT"
+                        secondAttribute="bottom"
+                        constant="16"
+                        id="pxf-Lx-X2h" />
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics" />
+            <connections>
+                <outlet
+                        property="datePicker"
+                        destination="3zk-Hy-fqT"
+                        id="yjT-fs-zFg" />
+                <outlet
+                        property="nextButton"
+                        destination="UMx-Pz-2nj"
+                        id="AMV-fy-ayq" />
+                <outlet
+                        property="photoContainerView"
+                        destination="juf-bv-uon"
+                        id="rzW-rx-ir0" />
+                <outlet
+                        property="questionLabel"
+                        destination="MyZ-dK-XTo"
+                        id="eUt-bB-Qj6" />
+            </connections>
+            <point
+                    key="canvasLocation"
+                    x="352.80000000000001"
+                    y="-110.64467766116942" />
+        </view>
+    </objects>
+</document>
