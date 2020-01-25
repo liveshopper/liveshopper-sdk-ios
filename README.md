@@ -1,4 +1,4 @@
-![LiveShopper](https://raw.githubusercontent.com/liveshopper/liveshopper-sdk-ios/master/docs/images/logo-small.svg?v=2&sanitize=true)
+![LiveShopper](https://raw.githubusercontent.com/liveshopper/liveshopper-sdk-ios/master/docs/images/logo-small.svg?v=3&sanitize=true)
 
 [LiveShopper](https://liveshopper.com) is the real time insight platform for mobile apps.
 
@@ -6,7 +6,7 @@
 
 Integrate the SDK into your iOS and Android apps to start offering your users real-time, location targeted tasks and offers. The SDK abstracts away cross-platform differences between location services on iOS and Android, allowing you to introduce geofence based context to your apps with just a few lines of code.
 
-The LiveShopper SDK is designed to be unobtrusive to the user and intelligently manage the frequency of tracking to efficently consume battery.
+The LiveShopper SDK is designed to be unobtrusive to the user and intelligently manage the frequency of tracking to efficiently consume battery.
 
 ## Authentication
 
@@ -32,8 +32,8 @@ Then, in your project settings, go to Capabilities > Background Modes and turn o
 ```xml
 <key>UIBackgroundModes</key>
 <array>
-  <string>fetch</string>
-  <string>location</string>
+<string>fetch</string>
+<string>location</string>
 </array>
 ```
 
@@ -43,7 +43,7 @@ The best way to add the SDK to your project is via CocoaPods or Carthage.
 
 ### CocoaPods
 
-For CocoaPods, add the following to your Podfile:
+For CocoaPods, add the following to your `Podfile`:
 
 ```bash
 pod 'LiveShopperSDK', '~> 0.0.1'
@@ -53,25 +53,25 @@ Then, run `pod install`.
 
 ### Carthage
 
-To include LiveShopper as a github origin in Carthage, add the following to your Cartfile:
+To include LiveShopper as a Github origin in Carthage, add the following to your `Cartfile`:
 
 ```bash
-github "liveshopper/liveshopper-sdk-ios" ~> 0.0.1
+github "liveshopper/liveshopper-sdk-ios"  ~> 0.0.1
 ```
 
-To include LiveShopper as a binary origin in Carthage, add the following to your Cartfile:
+To include LiveShopper as a binary origin in Carthage, add the following to your `Cartfile`:
 
 ```bash
-binary "https://raw.githubusercontent.com/liveshopper/liveshopper-sdk-ios/master/LiveShopperSDK.json" ~> 0.0.1
+binary "https://raw.githubusercontent.com/liveshopper/liveshopper-sdk-ios/master/LiveShopperSDK.json"  ~> 0.0.1
 ```
 
 ### Add manually
 
-You can also add the SDK to your project manually, though this is not recommended. Download the current release, unzip the package, and drag LiveShopperSDK.framework into your Xcode project. It will automatically appear in the Linked Frameworks and Libraries section of your project settings.
+You can also add the SDK to your project manually, though this is not recommended. Download the current release, unzip the package, and drag `LiveShopperSDK.framework` into your Xcode project. It will automatically appear in the _Linked Frameworks and Libraries_ section of your project settings.
 
 ## Dependencies
 
-The SDK depends on Apple’s CoreLocation framework (for location services). In your project settings, go to General > Linked Frameworks and Libraries and add CoreLocation if you haven’t already.
+The SDK depends on Apple’s [CoreLocation](https://developer.apple.com/documentation/corelocation/) framework (for location services). In your project settings, go to _General > Linked Frameworks and Libraries_ and add _CoreLocation_ if you haven’t already.
 
 The SDK currently supports iOS 10 and higher.
 
@@ -82,7 +82,7 @@ The SDK currently supports iOS 10 and higher.
 Import the SDK:
 
 ```swift
-import LiveShopperSDK
+import  LiveShopperSDK
 ```
 
 Initialize the SDK in your AppDelegate class, on the main thread, before calling any other LiveShopper methods. In application(\_:didFinishLaunchingWithOptions:), call:
@@ -105,7 +105,7 @@ where userId is a unique ID for the user. We do not recommend using names, email
 
 ### Request permissions
 
-The SDK respects the built in iOS location permissions. Before geotracking, the user must authorize location permissions for the app if they haven't previously. This is handled by the SDK once tracking is started.
+The SDK respects the built in iOS location permissions. Before tracking is permitted, the user must authorize location permissions for the app if they haven't previously. This is handled by the SDK once tracking is started.
 
 ### Tracking
 
@@ -121,18 +121,21 @@ To stop tracking the user's location, call:
 LiveShopper.stopTracking()
 ```
 
-To listen for events or errors client-side in the background, create a class that implements `LSDelegate`, then call setDelegate().
+To listen for events or errors client-side in the background, create a class that implements `LSDelegate`, then call `setDelegate()`.
 
-Set your LSDelegate in a codepath that will be initialized and executed in the background. For example, make your AppDelegate implement LSDelegate, not a ViewController. AppDelegate will be initialized in the background, whereas a ViewController may not be.
+Set your `LSDelegate` where it will be initialized and executed in the background. For example, make your `AppDelegate` implement `LSDelegate`, not a `ViewController`. `AppDelegate` will be initialized in the background, whereas a `ViewController` may not be.
 
 ```swift
 class AppDelegate: UIResponder, UIApplicationDelegate, LSDelegate {
-
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
     LiveShopper.initialize(publishableKey: publishableKey)
     LiveShopper.setDelegate(self)
 
     return true
+  }
+
+  func didFail(status: LSStatus) {
+    // do something with status
   }
 
   func didReceiveEvents(_ events: [LSEvent], user: LSUser) {
@@ -143,8 +146,331 @@ class AppDelegate: UIResponder, UIApplicationDelegate, LSDelegate {
     // do something with location, user
   }
 
-  func didFail(status: LSStatus) {
-    // do something with status
-  }
+}
+```
+
+### Tasks
+
+The LiveShopper SDK uses the `LSTask` model to represent an activity that can be performed by the user.
+
+`LSTask` provides the following information:
+
+```json
+{
+  "count": 22,
+  "data": [
+    {
+      "state": "generated",
+      "description": "Determine if location exists",
+      "distance": 0.41139203933289425,
+      "due": "4102376400",
+      "title": "Location Verification",
+      "claimDistanceOverride": "0.5",
+      "locationKey": "-LmfCNwykkNhhXEOYSB_",
+      "logo": "",
+      "taskRequirements": null,
+      "associatesOnly": false,
+      "nextQuestion": "-LmjvVzwDrCMSoYmz_7x",
+      "location": {
+        "latitude": 41.0388157,
+        "longitude": -83.6532543,
+        "address1": "229 W MAIN CROSS ST",
+        "address2": "",
+        "city": "FINDLAY",
+        "country": "US",
+        "name": "FINDLAY MAIN OFFICE",
+        "phoneNumber": "",
+        "state": "OH",
+        "zipCode": "45840"
+      },
+      "owners": {
+        "user": "...",
+        "client": "...",
+        "campaign": "-LmjvUny5xtQdOU3COwF"
+      },
+      "questions": [
+        {
+          "type": "singleAnswer",
+          "order": 0,
+          "images": null,
+          "owners": {
+            "client": "..."
+          },
+          "answers": [
+            {
+              "key": "-LmjvOS4y20duzH218WI",
+              "score": null,
+              "created": null,
+              "modified": null,
+              "answerOrder": 0,
+              "displayText": "Yes",
+              "questionKey": "-LmjvVzwDrCMSoYmz_7x",
+              "displayTextKey": null,
+              "clientReference": null,
+              "photoCaptureOptions": null
+            },
+            {
+              "key": "-LmjvQr5tYxA_dJftZRY",
+              "score": null,
+              "created": null,
+              "modified": null,
+              "answerOrder": 1,
+              "displayText": "No",
+              "questionKey": "-LmjvVzwDrCMSoYmz_7x",
+              "displayTextKey": null,
+              "clientReference": null,
+              "photoCaptureOptions": null
+            }
+          ],
+          "created": 1566319710,
+          "videoId": null,
+          "hasOther": false,
+          "maxScore": 0,
+          "maxValue": null,
+          "minValue": null,
+          "modified": 1569872078,
+          "numStars": null,
+          "pointers": {
+            "previousKey": null,
+            "nextKey": ""
+          },
+          "question": "Is this location an actual post office?",
+          "parentKey": "-LmjvVzwDrCMSoYmz_7x",
+          "isOptional": false,
+          "answerOrder": "sorted",
+          "allowDecimals": true,
+          "lowValueLabel": null,
+          "responseCount": null,
+          "sentimentText": null,
+          "highValueLabel": null,
+          "scoreIntervals": null,
+          "clientReference": "",
+          "criticalAnswers": null,
+          "showUnitsOnLeft": false,
+          "thresholdAnswers": null,
+          "maxMultipleAnswers": null,
+          "minMultipleAnswers": null,
+          "mustPickSuggestion": null,
+          "singleLineResponse": null,
+          "openTextPlaceholder": null,
+          "openTextSuggestions": null,
+          "photoCaptureOptions": {
+            "photoLevelType": "none",
+            "allowFlashToggle": true,
+            "mustProvidePhoto": false,
+            "photoOverlayType": "none",
+            "defaultFlashState": false
+          },
+          "unitOfMeasurementLabel": null,
+          "lastAnswerPositionPinned": null
+        }
+      ],
+      "rewards": [
+        {
+          "logo": "",
+          "state": "",
+          "owners": {
+            "client": "..."
+          },
+          "created": 1565199354,
+          "message": {
+            "body": "Stop by LiveShopper for your FREE high five!",
+            "header": "High Five"
+          },
+          "legalese": "",
+          "modified": 1565199354,
+          "parentKey": "-Llh8g_IkORyRb3d7G0I",
+          "claimCount": 0,
+          "maxClaimCount": 0,
+          "usedClaimCount": 0,
+          "activationDelay": 0,
+          "clientReference": "",
+          "campaignRewardKey": "-Llh8g_IkORyRb3d7G0I",
+          "activationExpiration": 1,
+          "redemptionExpiration": 30
+        }
+      ],
+      "time": {
+        "max": 5,
+        "min": 3
+      }
+    }
+  ]
+}
+```
+
+You can search for nearby tasks by calling:
+
+```swift
+LiveShopper.Tasks.get(
+    latitude: Double,
+    longitude: Double,
+    radius: Double,
+    minimumRadius: Double
+) { result in
+    if case let .success(tasks) = result {
+        ...
+    } else if case let .failure(error) = result {
+        ...
+    }
+}
+```
+
+You can get the available tasks at a location by calling:
+
+```swift
+LiveShopper.Tasks.get(
+    locationID: String,
+    minimumRadius: Double?,
+    campaignID: String?
+) { result in
+    if case let .success(tasks) = result {
+        ...
+    } else if case let .failure(error) = result {
+        ...
+    }
+}
+```
+
+You can get details about what the user must do to satisfy the task by calling:
+
+```swift
+let requirements = LiveShopper.Tasks.getRequirements(task: LSTask)
+```
+
+You can claim a task for the current user by calling:
+
+```swift
+LiveShopper.Tasks.claim(task: LSTask) { result in
+    if  case  let .success(claimedTask) = result {
+        ...
+    } else if  case  let .failure(error) = result
+        ...
+    }
+}
+```
+
+You can send a user response related to a task by calling:
+
+```swift
+LiveShopper.Tasks.saveResponse(
+    task: LSTask,
+    question: LSQuestion,
+    answers: [String]?,
+    userAnswer: String?,
+    image: UIImage?,
+) { result in
+    if  case  let .success(response) = result {
+        ...
+    else  if  case  let .failure(error) = result {
+        ...
+    }
+}
+```
+
+Finally, there is a helper method to get the next step in a task by calling:
+
+```swift
+let question = LiveShopper.Tasks.nextQuestion(task: LSTask, key: String)
+```
+
+### Places
+
+The LiveShopper SDK uses the `LSPlace` model to represent physical locations you have created.
+
+`LSPlace` provides the following information:
+
+```json
+{
+  "name": "FINDLAY MAIN OFFICE",
+  "active": true,
+  "latitude": 41.0388157,
+  "longitude": -83.6532543,
+  "address1": "229 W MAIN CROSS ST",
+  "address2": "",
+  "city": "FINDLAY",
+  "state": "OH",
+  "country": "US",
+  "zipCode": "45840",
+  "clientReference": "",
+  "emails": [],
+  "logoKey": "",
+  "phoneNumber": ""
+}
+```
+
+You can search for nearby `LSPlace` by calling:
+
+```swift
+LiveShopper.Places.get(
+    latitude: Double,
+    longitude: Double,
+    radius: Double,
+    minimumRadius: Double
+) { result in
+    if case .success = result {
+        ...
+    } else if case let .failure(error) = result {
+        ...
+    }
+}
+```
+
+alternatively, you can query based on keyword:
+
+```swift
+LiveShopper.Places.get(searchTerm: String) { result in {
+    if case .success = result {
+        ...
+    } else if case let .failure(error) = result {
+        ...
+    }
+}
+```
+
+### Rewards
+
+The LiveShopper SDK uses the `LSReward` model to represent what the user receives for completing a task.
+
+`LSReward` provides the following information:
+
+```json
+{
+  "logo": "",
+  "state": "",
+  "owners": {
+    "client": "..."
+  },
+  "created": 1565199354,
+  "message": {
+    "body": "Stop by LiveShopper for your FREE high five!",
+    "header": "High Five"
+  },
+  "legalese": "",
+  "modified": 1565199354,
+  "parentKey": "-Llh8g_IkORyRb3d7G0I",
+  "claimCount": 0,
+  "maxClaimCount": 0,
+  "usedClaimCount": 0,
+  "activationDelay": 0,
+  "clientReference": "",
+  "campaignRewardKey": "-Llh8g_IkORyRb3d7G0I",
+  "activationExpiration": 1,
+  "redemptionExpiration": 30
+}
+```
+
+You can claim a `LSReward` by calling:
+
+```swift
+LiveShopper.Rewards.claim(
+    task: LSTask,
+    reward: LSReward
+) { result in
+    if case .success = result {
+        ...
+    } else if case let .failure(error) = result {
+        ...
+    }
 }
 ```
