@@ -1,0 +1,31 @@
+PODS:
+  - Cosmos (21.0.0)
+  - LiveShopperSDK (0.0.1)
+  - M13Checkbox (3.4.0)
+  - QuickTableViewController (1.2.1)
+
+DEPENDENCIES:
+  - Cosmos
+  - LiveShopperSDK (from `../`)
+  - M13Checkbox
+  - QuickTableViewController
+
+SPEC REPOS:
+  trunk:
+    - Cosmos
+    - M13Checkbox
+    - QuickTableViewController
+
+EXTERNAL SOURCES:
+  LiveShopperSDK:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  Cosmos: 3dfb6e4ba48bd48b8c9aa2a77048ae11ed114f96
+  LiveShopperSDK: 82bf301fbf7efd41c1375ab47d1e187b0c09f49d
+  M13Checkbox: 6f59404540ac98ba83a3d1afac335895a40c6a5d
+  QuickTableViewController: e633756f35ddaafc5997f71bab9b0e512439ed85
+
+PODFILE CHECKSUM: 33575dc43a47fcf862f234fa8682aa9b8f170428
+
+COCOAPODS: 1.8.4

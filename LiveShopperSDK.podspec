@@ -15,12 +15,11 @@ Pod::Spec.new do |spec|
     spec.license                = { :type => 'Liveshopper Platform License', :file => 'LICENSE' }
 
     spec.frameworks             = 'CoreLocation'
-    spec.ios.deployment_target  = '10.0'
     spec.module_name            = 'LiveShopperSDK'
-    spec.platform               = :ios
+    spec.platform               = :ios, '10.0'
     spec.requires_arc           = true
-    spec.source                 = { :git => 'https://github.com/liveshopper/liveshopper-sdk-ios.git', :tag => "v#{spec.version}" }
+    spec.source                 = { :git => 'https://github.com/liveshopper/liveshopper-sdk-ios.git', :tag => spec.version.to_s }
     spec.source_files           = "LiveShopperSDK/LiveShopperSDK.framework/Headers/*.h"
     spec.swift_versions         = ['5.0', '5.1']
-    spec.vendored_frameworks    = './framework/LiveShopperSDK.framework'
+    spec.vendored_frameworks    = 'LiveShopperSDK/LiveShopperSDK.framework'
   end
