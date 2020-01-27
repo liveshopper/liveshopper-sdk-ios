@@ -1,0 +1,12 @@
+language: swift
+os: osx
+osx_image: xcode11.3
+cache: cocoapods
+podfile: examples/Podfile
+
+before_install:
+  - gem install cocoapods
+  - pod install --project-directory=examples
+
+script:
+  - pod lib lint

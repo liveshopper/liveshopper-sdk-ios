@@ -6,5 +6,5 @@ struct SegueIdentifier {
 
 struct AppConstants {
     static let defaultRadius = 50000.0
-    static let publishableKey = "-LlYDpy2UrzPcj_rzFPl"
+    static let publishableKey = "-Lzbl9sH8-DCzQe5Xefm"
 }
