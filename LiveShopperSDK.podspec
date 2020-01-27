@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
     spec.name                   = 'LiveShopperSDK'
-    spec.version                = '0.0.1'
+    spec.version                = '0.0.2'
     spec.summary                = 'Official LiveShopper SDK for iOS to access LiveShopper Platform.'
     spec.description            = <<-DESC
                                     LiveShopper allows you to crowd source REAL data
