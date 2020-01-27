@@ -1,5 +1,8 @@
 ![LiveShopper](https://raw.githubusercontent.com/liveshopper/liveshopper-sdk-ios/master/docs/images/logo-small.svg?v=3&sanitize=true)
 
+[![CocoaPods](https://img.shields.io/cocoapods/v/LiveShopperSDK.svg)](https://cocoapods.org/pods/LiveShopperSDK)
+[![Carthage](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg)](https://github.com/Carthage/Carthage)
+
 [LiveShopper](https://liveshopper.com) is the real time insight platform for mobile apps.
 
 ## Introduction
