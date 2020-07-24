@@ -1,0 +1,1047 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.2.4 (swiftlang-1103.0.32.9 clang-1103.0.32.53)
+// swift-module-flags: -target armv7-apple-ios10.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name LiveShopperSDK
+import AVFoundation
+import AdSupport
+import CommonCrypto
+import CoreLocation
+import CoreMotion
+import Dispatch
+import Foundation
+@_exported import LiveShopperSDK
+import MobileCoreServices
+import Swift
+import UIKit
+@_hasMissingDesignatedInitializers final public class LSGeofence {
+  final public var _description: Swift.String {
+    get
+  }
+  final public var _id: Swift.String {
+    get
+  }
+  final public var externalId: Swift.String?
+  final public var geometry: LiveShopperSDK.LSGeofenceGeometry!
+  final public var metadata: [Swift.String : LiveShopperSDK.AnyCodable]?
+  final public var tag: Swift.String?
+  @objc deinit
+}
+extension LSGeofence : Swift.Codable {
+  convenience public init(_id: Swift.String, _description: Swift.String)
+  convenience public init(from decoder: Swift.Decoder) throws
+  final public func encode(to encoder: Swift.Encoder) throws
+}
+public typealias LSAddPlaceCallback = (LiveShopperSDK.LiveShopper.LSStatus, [LiveShopperSDK.LSPlace]?) -> Swift.Void
+public typealias LSAutocompleteCallback = (LiveShopperSDK.LiveShopper.LSStatus, [LiveShopperSDK.LSAddress]?) -> Swift.Void
+public typealias LSClaimRewardCallback = (LiveShopperSDK.LiveShopper.LSStatus, LiveShopperSDK.LSReward?) -> Swift.Void
+public typealias LSClaimTaskCallback = (LiveShopperSDK.LiveShopper.LSStatus, LiveShopperSDK.LSTask?) -> Swift.Void
+public typealias LSDeleteUserCallback = (LiveShopperSDK.LiveShopper.LSStatus, Swift.Bool) -> Swift.Void
+public typealias LSGetLocationCallback = (LiveShopperSDK.LiveShopper.LSStatus, CoreLocation.CLLocation?, Swift.Bool) -> Swift.Void
+public typealias LSGetUserCallback = (LiveShopperSDK.LiveShopper.LSStatus, LiveShopperSDK.LSUser?) -> Swift.Void
+public typealias LSListRewardsCallback = (LiveShopperSDK.LiveShopper.LSStatus, [LiveShopperSDK.LSReward]?) -> Swift.Void
+public typealias LSListUsersCallback = (LiveShopperSDK.LiveShopper.LSStatus, [LiveShopperSDK.LSUser]?) -> Swift.Void
+public typealias LSSaveTaskResponseCallback = (LiveShopperSDK.LiveShopper.LSStatus, LiveShopperSDK.LSTaskResponse?, LiveShopperSDK.LSTaskResponse.SubmitError?) -> Swift.Void
+public typealias LSSearchGeofencesCallback = (LiveShopperSDK.LiveShopper.LSStatus, CoreLocation.CLLocation?, [LiveShopperSDK.LSGeofence]?) -> Swift.Void
+public typealias LSSearchPlacesCallback = (LiveShopperSDK.LiveShopper.LSStatus, CoreLocation.CLLocation?, [LiveShopperSDK.LSPlace]?) -> Swift.Void
+public typealias LSSearchTasksCallback = (LiveShopperSDK.LiveShopper.LSStatus, CoreLocation.CLLocation?, [LiveShopperSDK.LSTask]?) -> Swift.Void
+public typealias LSTrackingCallback = (LiveShopperSDK.LiveShopper.LSStatus, CoreLocation.CLLocation?, [LiveShopperSDK.LSEvent]?, LiveShopperSDK.LSUser?) -> Swift.Void
+public protocol LiveShopperSDK : AnyObject {
+  static var Places: LiveShopperSDK.LSPlacesProtocol.Type { get }
+  static var Rewards: LiveShopperSDK.LSRewardsProtocol.Type { get }
+  static var Search: LiveShopperSDK.LSSearchProtocol.Type { get }
+  static var Tasks: LiveShopperSDK.LSTasksProtocol.Type { get }
+  static var Tracking: LiveShopperSDK.LSTrackingProtocol.Type { get }
+  static var Users: LiveShopperSDK.LSUsersProtocol.Type { get }
+  static func createBarcodeScanner() -> (UIKit.UIViewController & LiveShopperSDK.BarcodeScannerViewControllerType)
+  static func createImagePicker(question: LiveShopperSDK.LSQuestion) -> UIKit.UIImagePickerController?
+  static func fromLocationSource(for source: LiveShopperSDK.LiveShopper.LSLocationSource) -> Swift.String
+  static func fromStatus(for status: LiveShopperSDK.LiveShopper.LSStatus) -> Swift.String
+  static func getDescription() -> Swift.String?
+  static func getLocation(completion: @escaping LiveShopperSDK.LSGetLocationCallback)
+  static func getLocation(desiredAccuracy: LiveShopperSDK.LiveShopperTrackingOptions.DesiredAccuracy, completion: @escaping LiveShopperSDK.LSGetLocationCallback)
+  static func getMetadata() -> [Swift.AnyHashable : Any]?
+  static func getTrackingOptions() -> LiveShopperSDK.LiveShopperTrackingOptions?
+  static func getUserId() -> Swift.String?
+  static func initialize(publishableKey: Swift.String)
+  static func isAuthenticated() -> Swift.Bool
+  static func setAdIdEnabled(_ enabled: Swift.Bool)
+  static func setDelegate(_ delegate: LiveShopperSDK.LiveShopperDelegate?)
+  static func setDescription(_ description: Swift.String?)
+  static func setLogLevel(_ level: LiveShopperSDK.LiveShopper.LSLogLevel)
+  static func setMetadata(_ metadata: [Swift.String : LiveShopperSDK.AnyCodable])
+  static func setUserId(_ userId: Swift.String)
+}
+public protocol LSPlacesProtocol {
+  static func create(place: LiveShopperSDK.LSPlace, storage: LiveShopperSDK.LiveShopper.LSStorageType, callback: @escaping LiveShopperSDK.LSAddPlaceCallback)
+  static func create(places: [LiveShopperSDK.LSPlace], storage: LiveShopperSDK.LiveShopper.LSStorageType, callback: @escaping LiveShopperSDK.LSAddPlaceCallback)
+}
+public protocol LSRewardsProtocol {
+  static func claim(task: LiveShopperSDK.LSTask, reward: LiveShopperSDK.LSReward, callback: @escaping LiveShopperSDK.LSClaimRewardCallback)
+  static func list(callback: @escaping LiveShopperSDK.LSListRewardsCallback)
+}
+public protocol LSSearchProtocol {
+  static func autocomplete(query: Swift.String, near location: CoreLocation.CLLocation, limit: Swift.Int, callback: @escaping LiveShopperSDK.LSAutocompleteCallback)
+  static func geofences(near location: CoreLocation.CLLocation, radius: Swift.Int, tags: [Swift.String]?, limit: Swift.Int, callback: @escaping LiveShopperSDK.LSSearchGeofencesCallback)
+  static func geofences(radius: Swift.Int, tags: [Swift.String]?, limit: Swift.Int, callback: @escaping LiveShopperSDK.LSSearchGeofencesCallback)
+  static func places(near location: CoreLocation.CLLocation, radius: Swift.Int, chains: [Swift.String]?, categories: [Swift.String]?, groups: [Swift.String]?, limit: Swift.Int, callback: @escaping LiveShopperSDK.LSSearchPlacesCallback)
+  static func places(radius: Swift.Int, chains: [Swift.String]?, categories: [Swift.String]?, groups: [Swift.String]?, limit: Swift.Int, callback: @escaping LiveShopperSDK.LSSearchPlacesCallback)
+  static func tasks(campaignId: Swift.String, callback: @escaping LiveShopperSDK.LSSearchTasksCallback)
+  static func tasks(locationId: Swift.String, callback: @escaping LiveShopperSDK.LSSearchTasksCallback)
+  static func tasks(near location: CoreLocation.CLLocation, radius: Swift.Int, radiusToExclude: Swift.Int?, callback: @escaping LiveShopperSDK.LSSearchTasksCallback)
+  static func tasks(radius: Swift.Int, radiusToExclude: Swift.Int?, callback: @escaping LiveShopperSDK.LSSearchTasksCallback)
+}
+public protocol LSTasksProtocol {
+  static func claim(task: LiveShopperSDK.LSTask, callback: @escaping LiveShopperSDK.LSClaimTaskCallback)
+  static func getRequirements(task: LiveShopperSDK.LSTask) -> [Swift.String]
+  static func nextQuestion(task: LiveShopperSDK.LSTask, key: Swift.String) -> LiveShopperSDK.LSQuestion?
+  static func saveResponse(task: LiveShopperSDK.LSTask, question: LiveShopperSDK.LSQuestion, answers: [Swift.String]?, answer: Swift.String?, image: UIKit.UIImage?, callback: @escaping LiveShopperSDK.LSSaveTaskResponseCallback)
+}
+public protocol LSTrackingProtocol {
+  static func isTracking() -> Swift.Bool
+  static func once(callback: @escaping LiveShopperSDK.LSTrackingCallback)
+  static func once(location: CoreLocation.CLLocation, callback: @escaping LiveShopperSDK.LSTrackingCallback)
+  static func start(options: LiveShopperSDK.LiveShopperTrackingOptions)
+  static func stop()
+}
+public protocol LSUsersProtocol {
+  static func delete(id: Swift.String, callback: (LiveShopperSDK.LiveShopper.LSStatus, Swift.Bool) -> Swift.Void)
+  static func get(id: Swift.String, callback: (LiveShopperSDK.LiveShopper.LSStatus, LiveShopperSDK.LSUser?) -> Swift.Void)
+  static func list(limit: Swift.Int?, updatedBefore: Foundation.Date?, updatedAfter: Foundation.Date?, callback: (LiveShopperSDK.LiveShopper.LSStatus, [LiveShopperSDK.LSUser]?) -> Swift.Void)
+}
+@_hasMissingDesignatedInitializers final public class LSRewardMessage {
+  final public var header: Swift.String?
+  final public var body: Swift.String?
+  @objc deinit
+}
+extension LSRewardMessage : Swift.Codable {
+  convenience public init(from decoder: Swift.Decoder) throws
+  final public func encode(to encoder: Swift.Encoder) throws
+}
+public protocol BarcodeScannerViewControllerType : AnyObject {
+  var delegate: LiveShopperSDK.BarcodeScannerDelegate? { get set }
+}
+@_hasMissingDesignatedInitializers final public class LSChain {
+  final public var externalId: Swift.String?
+  final public var metadata: [Swift.String : LiveShopperSDK.AnyCodable]?
+  final public var name: Swift.String
+  final public var slug: Swift.String
+  @objc deinit
+}
+extension LSChain : Swift.Codable {
+  convenience public init(from decoder: Swift.Decoder) throws
+  final public func encode(to encoder: Swift.Encoder) throws
+}
+public protocol LiveShopperDelegate : ObjectiveC.NSObjectProtocol {
+  func onClientLocationUpdated(location: CoreLocation.CLLocation, stopped: Swift.Bool, source: LiveShopperSDK.LiveShopper.LSLocationSource)
+  func onError(status: LiveShopperSDK.LiveShopper.LSStatus)
+  func onEventsReceived(events: [LiveShopperSDK.LSEvent], user: LiveShopperSDK.LSUser)
+  func onLocationUpdated(location: CoreLocation.CLLocation, user: LiveShopperSDK.LSUser)
+  func onLog(message: Swift.String)
+}
+@_hasMissingDesignatedInitializers final public class LSEvent {
+  final public var actualCreatedAt: Foundation.Date!
+  final public var alternatePlaces: [LiveShopperSDK.LSPlace]?
+  final public var confidence: LiveShopperSDK.LSEvent.Confidence
+  final public var createdAt: Foundation.Date!
+  final public var duration: Swift.Float
+  final public var geofence: LiveShopperSDK.LSGeofence?
+  final public var live: Swift.Bool
+  final public var location: CoreLocation.CLLocation!
+  final public var place: LiveShopperSDK.LSPlace?
+  final public var region: LiveShopperSDK.LSRegion?
+  final public var type: LiveShopperSDK.LSEvent.EventType
+  final public var verification: LiveShopperSDK.LSEvent.Verification
+  final public var verifiedPlace: LiveShopperSDK.LSPlace?
+  public enum Confidence : Swift.Int, Swift.Codable {
+    case NONE
+    case LOW
+    case MEDIUM
+    case HIGH
+    public typealias RawValue = Swift.Int
+    public init?(rawValue: Swift.Int)
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+  public enum EventType : Swift.Int, Swift.Codable {
+    case UNKNOWN
+    case USER_ENTERED_GEOFENCE
+    case USER_ENTERED_HOME
+    case USER_ENTERED_OFFICE
+    case USER_ENTERED_PLACE
+    case USER_ENTERED_REGION_COUNTRY
+    case USER_ENTERED_REGION_DMA
+    case USER_ENTERED_REGION_STATE
+    case USER_EXITED_GEOFENCE
+    case USER_EXITED_HOME
+    case USER_EXITED_OFFICE
+    case USER_EXITED_PLACE
+    case USER_EXITED_REGION_COUNTRY
+    case USER_EXITED_REGION_DMA
+    case USER_EXITED_REGION_STATE
+    case USER_NEARBY_PLACE_CHAIN
+    case USER_STARTED_COMMUTING
+    case USER_STARTED_TRAVELING
+    case USER_STOPPED_COMMUTING
+    case USER_STOPPED_TRAVELING
+    public typealias RawValue = Swift.Int
+    public init?(rawValue: Swift.Int)
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+  public enum Verification : Swift.Int, Swift.Codable {
+    case ACCEPT
+    case UNVERIFY
+    case REJECT
+    public typealias RawValue = Swift.Int
+    public init?(rawValue: Swift.Int)
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+  @objc deinit
+}
+extension LSEvent : Swift.Codable {
+  convenience public init(from decoder: Swift.Decoder) throws
+  final public func encode(to encoder: Swift.Encoder) throws
+}
+@_hasMissingDesignatedInitializers final public class LSTrackingResponse {
+  final public var events: [LiveShopperSDK.LSEvent]
+  final public var user: LiveShopperSDK.LSUser?
+  @objc deinit
+}
+extension LSTrackingResponse : Swift.Codable {
+  convenience public init(from decoder: Swift.Decoder) throws
+  final public func encode(to encoder: Swift.Encoder) throws
+}
+@_hasMissingDesignatedInitializers final public class LSEstimatedTime {
+  final public var max: Swift.Int
+  final public var min: Swift.Int
+  @objc deinit
+}
+extension LSEstimatedTime : Swift.Codable {
+  convenience public init(from decoder: Swift.Decoder) throws
+  final public func encode(to encoder: Swift.Encoder) throws
+}
+@_hasMissingDesignatedInitializers final public class LSReward {
+  final public var activationDelay: Swift.Int?
+  final public var activationExpiration: Swift.Int?
+  final public var activationExpiryPeriodType: Swift.Int?
+  final public var barcode: LiveShopperSDK.LSRewardBarcode?
+  final public var campaignRewardKey: Swift.String?
+  final public var claimCount: Swift.Int?
+  final public var clientName: Swift.String?
+  final public var clientReference: Swift.String?
+  final public var created: Swift.Int?
+  final public var daysToEmpty: Swift.Int?
+  final public var isRandomDraw: Swift.Bool?
+  final public var key: Swift.String?
+  final public var legalese: Swift.String?
+  final public var logo: Swift.String?
+  final public var maxClaimCount: Swift.Int?
+  final public var message: LiveShopperSDK.LSRewardMessage?
+  final public var modified: Swift.Int?
+  final public var owners: LiveShopperSDK.LSOwners?
+  final public var parentKey: Swift.String?
+  final public var randomDrawLoseMessage: Swift.String?
+  final public var randomDrawRatio: Swift.Double?
+  final public var redemptionExpiration: Swift.Int?
+  final public var shareText: Swift.String?
+  final public var state: Swift.String?
+  final public var version: Swift.Int?
+  @objc deinit
+}
+extension LSReward : Swift.Codable {
+  convenience public init(from decoder: Swift.Decoder) throws
+  final public func encode(to encoder: Swift.Encoder) throws
+}
+@_hasMissingDesignatedInitializers final public class LSUserInsightsLocation {
+  final public var confidence: LiveShopperSDK.LSUserInsights.LocationConfidence!
+  final public var country: LiveShopperSDK.LSRegion?
+  final public var dma: LiveShopperSDK.LSRegion?
+  final public var location: LiveShopperSDK.LSCoordinate?
+  final public var postalCode: LiveShopperSDK.LSRegion?
+  final public var state: LiveShopperSDK.LSRegion?
+  final public var type: LiveShopperSDK.LSUserInsights.LocationType!
+  final public var updatedAt: Foundation.Date!
+  @objc deinit
+}
+extension LSUserInsightsLocation : Swift.Codable {
+  convenience public init(from decoder: Swift.Decoder) throws
+  final public func encode(to encoder: Swift.Encoder) throws
+}
+public enum LSStorageError : Swift.Error {
+  case DEALLOCATED
+  case DECODING_FAILED
+  case ENCODING_FAILED
+  case MALFORMED_FILE_ATTRIBUTES
+  case NOT_FOUND
+  case TRANSFORMER_FAIL
+  case TYPE_NOT_MATCH
+  public static func == (a: LiveShopperSDK.LSStorageError, b: LiveShopperSDK.LSStorageError) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+  public func hash(into hasher: inout Swift.Hasher)
+}
+@_hasMissingDesignatedInitializers final public class LSUser {
+  final public var _description: Swift.String? {
+    get
+  }
+  final public var _id: Swift.String {
+    get
+  }
+  final public var country: LiveShopperSDK.LSRegion?
+  final public var deviceId: Swift.String?
+  final public var dma: LiveShopperSDK.LSRegion?
+  final public var foreground: Swift.Bool
+  final public var geofences: [LiveShopperSDK.LSGeofence]?
+  final public var insights: LiveShopperSDK.LSUserInsights?
+  final public var metadata: [Swift.String : LiveShopperSDK.AnyCodable]?
+  final public var nearbyPlaceChains: [LiveShopperSDK.LSChain]?
+  final public var place: LiveShopperSDK.LSPlace?
+  final public var postalCode: LiveShopperSDK.LSRegion?
+  final public var segments: [LiveShopperSDK.LSSegment]?
+  final public var state: LiveShopperSDK.LSRegion?
+  final public var stopped: Swift.Bool
+  final public var topChains: [LiveShopperSDK.LSChain]?
+  final public var userId: Swift.String?
+  final public var location: CoreLocation.CLLocation? {
+    get
+    set
+  }
+  @objc deinit
+}
+extension LSUser : Swift.Codable {
+  convenience public init(_id: Swift.String, _description: Swift.String)
+  convenience public init(from decoder: Swift.Decoder) throws
+  final public func encode(to encoder: Swift.Encoder) throws
+  final public func setDescription(_ description: Swift.String?)
+}
+@_hasMissingDesignatedInitializers final public class LSCoordinate {
+  final public var coordinate: CoreLocation.CLLocationCoordinate2D?
+  @objc deinit
+}
+extension LSCoordinate : Swift.Codable {
+  convenience public init(from decoder: Swift.Decoder) throws
+  final public func encode(to encoder: Swift.Encoder) throws
+}
+extension LSCoordinate : Swift.Equatable {
+  public static func == (lhs: LiveShopperSDK.LSCoordinate, rhs: LiveShopperSDK.LSCoordinate) -> Swift.Bool
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers final public class LiveShopperTrackingOptions : ObjectiveC.NSObject, Swift.Codable {
+  final public var desiredAccuracy: LiveShopperSDK.LiveShopperTrackingOptions.DesiredAccuracy!
+  final public var desiredMovingUpdateInterval: Swift.Int
+  final public var desiredStoppedUpdateInterval: Swift.Int
+  final public var desiredSyncInterval: Swift.Int
+  final public var movingGeofenceRadius: Swift.Int
+  final public var replay: LiveShopperSDK.LiveShopperTrackingOptions.Replay!
+  final public var showBlueBar: Swift.Bool
+  final public var startTrackingAfter: Foundation.Date?
+  final public var stopDistance: Swift.Int
+  final public var stopDuration: Swift.Int
+  final public var stoppedGeofenceRadius: Swift.Int
+  final public var stopTrackingAfter: Foundation.Date?
+  final public var sync: LiveShopperSDK.LiveShopperTrackingOptions.Sync!
+  final public var useMovingGeofence: Swift.Bool
+  final public var useSignificantLocationChanges: Swift.Bool
+  final public var useStoppedGeofence: Swift.Bool
+  final public var useVisits: Swift.Bool
+  @objc override final public var description: Swift.String {
+    @objc get
+  }
+  public enum DesiredAccuracy : Swift.Int, Swift.Codable {
+    case NONE
+    case LOW
+    case MEDIUM
+    case HIGH
+    public typealias RawValue = Swift.Int
+    public init?(rawValue: Swift.Int)
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+  public enum Replay : Swift.Int, Swift.Codable {
+    case NONE
+    case STOPS
+    public typealias RawValue = Swift.Int
+    public init?(rawValue: Swift.Int)
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+  public enum Sync : Swift.Int, Swift.Codable {
+    case NONE
+    case STOPS_AND_EXITS
+    case ALL
+    public typealias RawValue = Swift.Int
+    public init?(rawValue: Swift.Int)
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+  public init(from decoder: Swift.Decoder) throws
+  final public func encode(to encoder: Swift.Encoder) throws
+  @objc deinit
+}
+extension LiveShopperTrackingOptions {
+  public static let CONTINUOUS: LiveShopperSDK.LiveShopperTrackingOptions
+  public static let EFFICIENT: LiveShopperSDK.LiveShopperTrackingOptions
+  public static let RESPONSIVE: LiveShopperSDK.LiveShopperTrackingOptions
+}
+@_hasMissingDesignatedInitializers final public class LSRouteDuration {
+  final public var text: Swift.String
+  final public var value: Swift.Double
+  @objc deinit
+}
+extension LSRouteDuration : Swift.Codable {
+  convenience public init(from decoder: Swift.Decoder) throws
+  final public func encode(to encoder: Swift.Encoder) throws
+}
+@_hasMissingDesignatedInitializers final public class LSRegion {
+  final public var _id: Swift.String {
+    get
+  }
+  final public var code: Swift.String
+  final public var flag: Swift.String?
+  final public var name: Swift.String
+  final public var type: Swift.String
+  @objc deinit
+}
+extension LSRegion : Swift.Codable {
+  convenience public init(from decoder: Swift.Decoder) throws
+  final public func encode(to encoder: Swift.Encoder) throws
+}
+@_hasMissingDesignatedInitializers final public class LSQuestion {
+  final public var allowDecimals: Swift.Bool
+  final public var answerOrder: Swift.String
+  final public var answers: [LiveShopperSDK.LSAnswer]
+  final public var clientReference: Swift.String?
+  final public var created: Swift.Int?
+  final public var criticalAnswers: [Swift.String]
+  final public var hasOther: Swift.Bool?
+  final public var highValueLabel: Swift.String?
+  final public var images: [Swift.String]
+  final public var isOptional: Swift.Bool?
+  final public var key: Swift.String?
+  final public var lastAnswerPositionPinned: Swift.Bool?
+  final public var lowValueLabel: Swift.String?
+  final public var maxMultipleAnswers: Swift.Int?
+  final public var maxScore: Swift.Int?
+  final public var maxValue: Swift.Int?
+  final public var minMultipleAnswers: Swift.Int?
+  final public var minValue: Swift.Int?
+  final public var modified: Swift.Int?
+  final public var mustPickSuggestion: Swift.Bool?
+  final public var numStars: Swift.Int?
+  final public var openTextPlaceholder: Swift.String?
+  final public var openTextSuggestions: [Swift.String]
+  final public var order: Swift.Int?
+  final public var owners: LiveShopperSDK.LSOwners?
+  final public var parentKey: Swift.String?
+  final public var photoCaptureOptions: LiveShopperSDK.LSPhotoCaptureOptions?
+  final public var pointers: LiveShopperSDK.LSKeyedListPointer?
+  final public var question: Swift.String
+  final public var responseCount: LiveShopperSDK.LSTaskResponseCount?
+  final public var scoreIntervals: [LiveShopperSDK.LSScoreInterval]
+  final public var sentimentText: Swift.String?
+  final public var showUnitsOnLeft: Swift.Bool
+  final public var singleLineResponse: Swift.Bool?
+  final public var thresholdAnswers: [Swift.String]
+  final public var type: LiveShopperSDK.LSQuestion.QuestionType
+  final public var unitOfMeasurementLabel: Swift.String?
+  final public var version: Swift.Int?
+  final public var videoId: Swift.String?
+  public enum QuestionType : Swift.String, Swift.Codable {
+    case BARCODE_SCAN
+    case DATE
+    case MULTIPLE_ANSWERS
+    case NUMERIC_OPEN_ENDED
+    case OPEN_ENDED
+    case RATING_SCALE
+    case RATING_SCALE_WITH_TEXT
+    case SINGLE_ANSWER
+    case TIME
+    case UNDEFINED
+    public typealias RawValue = Swift.String
+    public init?(rawValue: Swift.String)
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  @objc deinit
+}
+extension LSQuestion : Swift.Codable {
+  convenience public init(from decoder: Swift.Decoder) throws
+  final public func encode(to encoder: Swift.Encoder) throws
+}
+@_hasMissingDesignatedInitializers final public class LSContext {
+  final public var country: LiveShopperSDK.LSRegion?
+  final public var dma: LiveShopperSDK.LSRegion?
+  final public var geofences: [LiveShopperSDK.LSGeofence]
+  final public var place: LiveShopperSDK.LSPlace?
+  final public var postalCode: LiveShopperSDK.LSRegion?
+  final public var state: LiveShopperSDK.LSRegion?
+  @objc deinit
+}
+extension LSContext : Swift.Codable {
+  convenience public init(from decoder: Swift.Decoder) throws
+  final public func encode(to encoder: Swift.Encoder) throws
+}
+@_hasMissingDesignatedInitializers final public class LSTaskResponseCount {
+  final public var actual: Swift.Int
+  final public var wanted: Swift.Int
+  @objc deinit
+}
+extension LSTaskResponseCount : Swift.Codable {
+  convenience public init(from decoder: Swift.Decoder) throws
+  final public func encode(to encoder: Swift.Encoder) throws
+}
+final public class LSPlace {
+  final public var _id: Swift.String {
+    get
+  }
+  final public var active: Swift.Bool?
+  final public var categories: [Swift.String]
+  final public var chain: LiveShopperSDK.LSChain?
+  final public var clientKey: Swift.String?
+  final public var clientReference: Swift.String?
+  final public var dragonId: Swift.String?
+  final public var emails: [Swift.String]?
+  final public var group: Swift.String?
+  final public var key: Swift.String?
+  final public var location: LiveShopperSDK.LSAddress?
+  final public var metadata: [Swift.String : LiveShopperSDK.AnyCodable]?
+  final public var name: Swift.String
+  final public var owners: LiveShopperSDK.LSOwners?
+  public init()
+  @objc deinit
+}
+extension LSPlace : Swift.Codable {
+  convenience public init(from decoder: Swift.Decoder) throws
+  final public func encode(to encoder: Swift.Encoder) throws
+}
+@_hasMissingDesignatedInitializers final public class LSTaskResponse {
+  final public var answers: [Swift.String]?
+  final public var base64: Swift.String?
+  final public var created: Swift.Int?
+  final public var key: Swift.String?
+  final public var modified: Swift.Int?
+  final public var nextKey: Swift.String?
+  final public var owners: LiveShopperSDK.LSOwners?
+  final public var photoUrl: Swift.String?
+  final public var question: LiveShopperSDK.LSQuestion?
+  final public var score: Swift.Int?
+  final public var state: LiveShopperSDK.LSTask.State
+  final public var taskKey: Swift.String
+  final public var userAnswer: Swift.String?
+  final public var version: Swift.Int?
+  public enum SubmitError {
+    case INVALID_NUMBER_FORMAT
+    case INVALID_RANGE_ANSWER(Swift.Int, Swift.Int)
+    case INVALID_RANGE_CHARACTERS(Swift.Int, Swift.Int)
+    case INVALID_RANGE_NUMBER(Swift.Int, Swift.Int)
+    case INVALID_VALUE
+    case MISSING_BARCODE
+    case MISSING_DATE
+    case MISSING_PHOTO
+    case MISSING_RATING
+    case MISSING_TIME
+    case MISSING_TASK_KEY
+    case UNKNOWN
+    public var message: Swift.String {
+      get
+    }
+  }
+  @objc deinit
+}
+extension LSTaskResponse : Swift.Codable {
+  convenience public init(from decoder: Swift.Decoder) throws
+  final public func encode(to encoder: Swift.Encoder) throws
+}
+@_hasMissingDesignatedInitializers final public class LSKeyedListPointer {
+  final public var nextKey: Swift.String
+  final public var previousKey: Swift.String
+  @objc deinit
+}
+extension LSKeyedListPointer : Swift.Codable {
+  convenience public init(from decoder: Swift.Decoder) throws
+  final public func encode(to encoder: Swift.Encoder) throws
+}
+@_inheritsConvenienceInitializers final public class LSCircleGeometry : LiveShopperSDK.LSGeofenceGeometry {
+  final public var center: LiveShopperSDK.LSCoordinate?
+  final public var radius: Swift.Double
+  override public init()
+  required public init(from decoder: Swift.Decoder) throws
+  override final public func encode(to encoder: Swift.Encoder) throws
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class LiveShopper : LiveShopperSDK.LiveShopperSDK {
+  public enum LSLocationSource : Swift.Int {
+    case BACKGROUND_LOCATION
+    case FOREGROUND_LOCATION
+    case GEOFENCE_DWELL
+    case GEOFENCE_ENTER
+    case GEOFENCE_EXIT
+    case MANUAL_LOCATION
+    case VISIT_ARRIVAL
+    case VISIT_DEPARTURE
+    case UNKNOWN
+    public typealias RawValue = Swift.Int
+    public init?(rawValue: Swift.Int)
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+  public enum LSLogLevel : Swift.Int {
+    case NONE
+    case ERROR
+    case WARNING
+    case INFO
+    case DEBUG
+    public typealias RawValue = Swift.Int
+    public var rawValue: Swift.Int {
+      get
+    }
+    public init?(rawValue: Swift.Int)
+  }
+  public struct LSRouteMode : Swift.OptionSet {
+    public let rawValue: Swift.Int
+    public init(rawValue: Swift.Int)
+    public static let FOOT: LiveShopperSDK.LiveShopper.LSRouteMode
+    public static let BIKE: LiveShopperSDK.LiveShopper.LSRouteMode
+    public static let CAR: LiveShopperSDK.LiveShopper.LSRouteMode
+    public static let TRANSIT: LiveShopperSDK.LiveShopper.LSRouteMode
+    public typealias Element = LiveShopperSDK.LiveShopper.LSRouteMode
+    public typealias ArrayLiteralElement = LiveShopperSDK.LiveShopper.LSRouteMode
+    public typealias RawValue = Swift.Int
+  }
+  public enum LSRouteUnits : Swift.Int {
+    case IMPERIAL
+    case METRIC
+    public typealias RawValue = Swift.Int
+    public init?(rawValue: Swift.Int)
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+  public enum LSStatus : Swift.Int {
+    case ERROR_BAD_REQUEST
+    case ERROR_FORBIDDEN
+    case ERROR_LOCATION
+    case ERROR_NETWORK
+    case ERROR_NOT_FOUND
+    case ERROR_PAYMENT_REQUIRED
+    case ERROR_PERMISSIONS
+    case ERROR_PUBLISHABLE_KEY
+    case ERROR_QUESTION_SUBMIT_FAILURE
+    case ERROR_RATE_LIMIT
+    case ERROR_SERIALIZATION
+    case ERROR_SERVER
+    case ERROR_TASK_CLAIM_FAILURE
+    case ERROR_TASK_OUT_OF_RANGE
+    case ERROR_TASK_RESPONSE_SUBMIT_FAILURE
+    case ERROR_UNAUTHORIZED
+    case ERROR_UNIMPLEMENTED
+    case ERROR_UNKNOWN
+    case SUCCESS
+    public typealias RawValue = Swift.Int
+    public init?(rawValue: Swift.Int)
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+  public enum LSStorageType : Swift.Int {
+    case LOCAL
+    case REMOTE
+    public typealias RawValue = Swift.Int
+    public init?(rawValue: Swift.Int)
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+  public static func createBarcodeScanner() -> (UIKit.UIViewController & LiveShopperSDK.BarcodeScannerViewControllerType)
+  public static func createImagePicker(question: LiveShopperSDK.LSQuestion) -> UIKit.UIImagePickerController?
+  public static func getDescription() -> Swift.String?
+  public static func getMetadata() -> [Swift.AnyHashable : Any]?
+  public static func getTrackingOptions() -> LiveShopperSDK.LiveShopperTrackingOptions?
+  public static func getUserId() -> Swift.String?
+  public static func initialize(publishableKey: Swift.String)
+  public static func isAuthenticated() -> Swift.Bool
+  public static func setAdIdEnabled(_ enabled: Swift.Bool)
+  public static func setDelegate(_ delegate: LiveShopperSDK.LiveShopperDelegate?)
+  public static func setDescription(_ description: Swift.String?)
+  public static func setLogLevel(_ level: LiveShopperSDK.LiveShopper.LSLogLevel)
+  public static func setMetadata(_ metadata: [Swift.String : LiveShopperSDK.AnyCodable])
+  public static func setUserId(_ userId: Swift.String)
+  public static func getLocation(completion: @escaping LiveShopperSDK.LSGetLocationCallback)
+  public static func getLocation(desiredAccuracy: LiveShopperSDK.LiveShopperTrackingOptions.DesiredAccuracy, completion: @escaping LiveShopperSDK.LSGetLocationCallback)
+  @objc deinit
+}
+extension LiveShopper {
+  public struct NotificationKeys {
+    public static let CAMPAIGN_ID: Swift.String
+    public static let LOCATION_ID: Swift.String
+  }
+}
+extension LiveShopper {
+  public static let Places: LiveShopperSDK.LSPlacesProtocol.Type
+}
+extension LiveShopper {
+  public static var Rewards: LiveShopperSDK.LSRewardsProtocol.Type
+}
+extension LiveShopper {
+  public static let Search: LiveShopperSDK.LSSearchProtocol.Type
+}
+extension LiveShopper {
+  public static let Tasks: LiveShopperSDK.LSTasksProtocol.Type
+}
+extension LiveShopper {
+  public static let Tracking: LiveShopperSDK.LSTrackingProtocol.Type
+}
+extension LiveShopper {
+  public static let Users: LiveShopperSDK.LSUsersProtocol.Type
+}
+extension LiveShopper {
+  public static func fromLocationSource(for source: LiveShopperSDK.LiveShopper.LSLocationSource) -> Swift.String
+  public static func fromStatus(for status: LiveShopperSDK.LiveShopper.LSStatus) -> Swift.String
+}
+@_hasMissingDesignatedInitializers final public class LSRewardBarcode {
+  final public var alternateText: Swift.String?
+  final public var instructions: Swift.String?
+  final public var isUnique: Swift.Bool?
+  final public var rewardKey: Swift.String?
+  final public var state: Swift.String?
+  final public var type: Swift.String?
+  final public var value: Swift.String?
+  @objc deinit
+}
+extension LSRewardBarcode : Swift.Codable {
+  convenience public init(from decoder: Swift.Decoder) throws
+  final public func encode(to encoder: Swift.Encoder) throws
+}
+@_hasMissingDesignatedInitializers final public class LSRoute {
+  final public var distance: LiveShopperSDK.LSRouteDistance!
+  final public var duration: LiveShopperSDK.LSRouteDuration!
+  @objc deinit
+}
+extension LSRoute : Swift.Codable {
+  convenience public init(from decoder: Swift.Decoder) throws
+  final public func encode(to encoder: Swift.Encoder) throws
+}
+@_hasMissingDesignatedInitializers final public class LSRouteDistance {
+  final public var text: Swift.String
+  final public var value: Swift.Double
+  @objc deinit
+}
+extension LSRouteDistance : Swift.Codable {
+  convenience public init(from decoder: Swift.Decoder) throws
+  final public func encode(to encoder: Swift.Encoder) throws
+}
+@_hasMissingDesignatedInitializers final public class LSUserInsightsState {
+  final public var commuting: Swift.Bool
+  final public var home: Swift.Bool
+  final public var office: Swift.Bool
+  final public var traveling: Swift.Bool
+  @objc deinit
+}
+extension LSUserInsightsState : Swift.Codable {
+  convenience public init(from decoder: Swift.Decoder) throws
+  final public func encode(to encoder: Swift.Encoder) throws
+}
+public class LSGeofenceGeometry : Swift.Codable {
+  public init()
+  required public init(from _: Swift.Decoder) throws
+  public func encode(to _: Swift.Encoder) throws
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers final public class LSRoutes {
+  final public var bike: LiveShopperSDK.LSRoute?
+  final public var car: LiveShopperSDK.LSRoute?
+  final public var foot: LiveShopperSDK.LSRoute?
+  final public var geodesic: LiveShopperSDK.LSRouteDistance?
+  final public var transit: LiveShopperSDK.LSRoute?
+  @objc deinit
+}
+extension LSRoutes : Swift.Codable {
+  convenience public init(from decoder: Swift.Decoder) throws
+  final public func encode(to encoder: Swift.Encoder) throws
+}
+@_hasMissingDesignatedInitializers final public class LSAnswer {
+  final public var answerOrder: Swift.Int
+  final public var clientReference: Swift.String
+  final public var created: Swift.Int?
+  final public var displayText: Swift.String
+  final public var displayTextKey: Swift.String
+  final public var key: Swift.String?
+  final public var modified: Swift.Int?
+  final public var nextQuestionKey: Swift.String
+  final public var owners: LiveShopperSDK.LSOwners?
+  final public var photoCaptureOptions: LiveShopperSDK.LSPhotoCaptureOptions?
+  final public var questionKey: Swift.String
+  final public var score: Swift.Int?
+  final public var version: Swift.Int?
+  @objc deinit
+}
+extension LSAnswer : Swift.Codable {
+  convenience public init(from decoder: Swift.Decoder) throws
+  final public func encode(to encoder: Swift.Encoder) throws
+}
+@_hasMissingDesignatedInitializers final public class LSSegment {
+  final public var _description: Swift.String
+  final public var externalId: Swift.String
+  @objc deinit
+}
+extension LSSegment : Swift.Codable {
+  convenience public init(from decoder: Swift.Decoder) throws
+  final public func encode(to encoder: Swift.Encoder) throws
+}
+@_hasMissingDesignatedInitializers final public class LSTask : Swift.Hashable {
+  final public var associatesOnly: Swift.Bool
+  final public var claimDistanceOverride: Swift.Double?
+  final public var created: Swift.Int?
+  final public var description: Swift.String?
+  final public var distance: Swift.Double
+  final public var due: Swift.Int?
+  final public var key: Swift.String?
+  final public var location: LiveShopperSDK.LSAddress?
+  final public var locationKey: Swift.String
+  final public var logo: Swift.String?
+  final public var modified: Swift.Int?
+  final public var nextQuestion: Swift.String?
+  final public var owners: LiveShopperSDK.LSOwners?
+  final public var questions: [LiveShopperSDK.LSQuestion]
+  final public var rewards: [LiveShopperSDK.LSReward]
+  final public var state: LiveShopperSDK.LSTask.State
+  final public var taskRequirements: [Swift.String]
+  final public var time: LiveShopperSDK.LSEstimatedTime?
+  final public var title: Swift.String?
+  final public var version: Swift.Int?
+  public enum State : Swift.String, Swift.Codable {
+    case CANCELLED
+    case COMPLETED
+    case CONTINUE
+    case ERROR
+    case GENERATED
+    case INVALID
+    case REJECTED
+    case RUNNING
+    case UNKNOWN
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+    public init?(rawValue: Swift.String)
+  }
+  @objc deinit
+  final public var hashValue: Swift.Int {
+    get
+  }
+}
+extension LSTask : Swift.Codable {
+  convenience public init(from decoder: Swift.Decoder) throws
+  final public func encode(to encoder: Swift.Encoder) throws
+  final public func hash(into hasher: inout Swift.Hasher)
+  final public func distance(metric: Swift.Bool = false) -> Swift.String
+  public static func == (lhs: LiveShopperSDK.LSTask, rhs: LiveShopperSDK.LSTask) -> Swift.Bool
+}
+final public class LSAddress {
+  final public var address1: Swift.String?
+  final public var address2: Swift.String?
+  final public var borough: Swift.String?
+  final public var city: Swift.String?
+  final public var confidence: LiveShopperSDK.LSAddress.Confidence!
+  final public var coordinate: CoreLocation.CLLocationCoordinate2D?
+  final public var country: Swift.String?
+  final public var countryCode: Swift.String?
+  final public var countryFlag: Swift.String?
+  final public var county: Swift.String?
+  final public var formattedAddress: Swift.String?
+  final public var geofenceRadius: Swift.Double?
+  final public var name: Swift.String?
+  final public var neighborhood: Swift.String?
+  final public var number: Swift.String?
+  final public var phoneNumber: Swift.String?
+  final public var placeLabel: Swift.String?
+  final public var postalCode: Swift.String?
+  final public var state: Swift.String?
+  final public var stateCode: Swift.String?
+  public enum Confidence : Swift.Int, Swift.Codable {
+    case NONE
+    case EXACT
+    case INTERPOLATED
+    case FALLBACK
+    public typealias RawValue = Swift.Int
+    public init?(rawValue: Swift.Int)
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+  public init()
+  @objc deinit
+}
+extension LSAddress : Swift.Codable {
+  convenience public init(from decoder: Swift.Decoder) throws
+  final public func encode(to encoder: Swift.Encoder) throws
+}
+public struct AnyCodable : Swift.Codable {
+  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+}
+@_hasMissingDesignatedInitializers final public class LSOwners {
+  final public var campaign: Swift.String?
+  final public var client: Swift.String?
+  final public var user: Swift.String?
+  @objc deinit
+}
+extension LSOwners : Swift.Codable {
+  convenience public init(from decoder: Swift.Decoder) throws
+  final public func encode(to encoder: Swift.Encoder) throws
+}
+@_hasMissingDesignatedInitializers final public class LSScoreInterval {
+  final public var lowerBound: Swift.Int?
+  final public var upperBound: Swift.Int?
+  final public var score: Swift.Int
+  @objc deinit
+}
+extension LSScoreInterval : Swift.Codable {
+  convenience public init(from decoder: Swift.Decoder) throws
+  final public func encode(to encoder: Swift.Encoder) throws
+}
+@_inheritsConvenienceInitializers final public class LSPolygonGeometry : LiveShopperSDK.LSGeofenceGeometry {
+  final public var coordinates: [LiveShopperSDK.LSCoordinate]?
+  override public init()
+  required public init(from decoder: Swift.Decoder) throws
+  override final public func encode(to encoder: Swift.Encoder) throws
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers final public class LSUserInsights {
+  final public var homeLocation: LiveShopperSDK.LSUserInsightsLocation?
+  final public var officeLocation: LiveShopperSDK.LSUserInsightsLocation?
+  final public var state: LiveShopperSDK.LSUserInsightsState!
+  public enum LocationConfidence : Swift.Int, Swift.Codable {
+    case NONE
+    case LOW
+    case MEDIUM
+    case HIGH
+    public typealias RawValue = Swift.Int
+    public init?(rawValue: Swift.Int)
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+  public enum LocationType : Swift.String, Swift.Codable {
+    case UNKNOWN
+    case HOME
+    case OFFICE
+    public typealias RawValue = Swift.String
+    public init?(rawValue: Swift.String)
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  @objc deinit
+}
+extension LSUserInsights : Swift.Codable {
+  convenience public init(from decoder: Swift.Decoder) throws
+  final public func encode(to encoder: Swift.Encoder) throws
+}
+@_hasMissingDesignatedInitializers final public class LSPhotoCaptureOptions {
+  final public var allowFlashToggle: Swift.Bool
+  final public var defaultFlashState: Swift.Bool
+  final public var exampleImage: Swift.String
+  final public var googleVisionOptionKey: Swift.String
+  final public var mustProvidePhoto: Swift.Bool
+  final public var photoLevelType: LiveShopperSDK.LSPhotoCaptureOptions.LevelType
+  final public var photoOverlayType: LiveShopperSDK.LSPhotoCaptureOptions.OverlayType
+  final public var photoPromptText: Swift.String
+  public enum LevelType : Swift.String, Swift.Codable {
+    case FLAT
+    case NONE
+    case VERTICAL
+    public typealias RawValue = Swift.String
+    public init?(rawValue: Swift.String)
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  public enum OverlayType : Swift.String, Swift.Codable {
+    case CIRCLE
+    case CIRCLE_SQUARE
+    case NONE
+    case RECTANGLE_HORIZONTAL
+    case RECTANGLE_VERTICAL
+    case SQUARE
+    public typealias RawValue = Swift.String
+    public init?(rawValue: Swift.String)
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  @objc deinit
+}
+extension LSPhotoCaptureOptions : Swift.Codable {
+  convenience public init(from decoder: Swift.Decoder) throws
+  final public func encode(to encoder: Swift.Encoder) throws
+}
+public protocol BarcodeScannerDelegate : AnyObject {
+  func scanningDidFail()
+  func scanningDidStop()
+  func scanningSucceeded(code: Swift.String?)
+}
+extension LiveShopperSDK.LSEvent.Confidence : Swift.Equatable {}
+extension LiveShopperSDK.LSEvent.Confidence : Swift.Hashable {}
+extension LiveShopperSDK.LSEvent.Confidence : Swift.RawRepresentable {}
+extension LiveShopperSDK.LSEvent.EventType : Swift.Equatable {}
+extension LiveShopperSDK.LSEvent.EventType : Swift.Hashable {}
+extension LiveShopperSDK.LSEvent.EventType : Swift.RawRepresentable {}
+extension LiveShopperSDK.LSEvent.Verification : Swift.Equatable {}
+extension LiveShopperSDK.LSEvent.Verification : Swift.Hashable {}
+extension LiveShopperSDK.LSEvent.Verification : Swift.RawRepresentable {}
+extension LiveShopperSDK.LSStorageError : Swift.Equatable {}
+extension LiveShopperSDK.LSStorageError : Swift.Hashable {}
+extension LiveShopperSDK.LiveShopperTrackingOptions.DesiredAccuracy : Swift.Equatable {}
+extension LiveShopperSDK.LiveShopperTrackingOptions.DesiredAccuracy : Swift.Hashable {}
+extension LiveShopperSDK.LiveShopperTrackingOptions.DesiredAccuracy : Swift.RawRepresentable {}
+extension LiveShopperSDK.LiveShopperTrackingOptions.Replay : Swift.Equatable {}
+extension LiveShopperSDK.LiveShopperTrackingOptions.Replay : Swift.Hashable {}
+extension LiveShopperSDK.LiveShopperTrackingOptions.Replay : Swift.RawRepresentable {}
+extension LiveShopperSDK.LiveShopperTrackingOptions.Sync : Swift.Equatable {}
+extension LiveShopperSDK.LiveShopperTrackingOptions.Sync : Swift.Hashable {}
+extension LiveShopperSDK.LiveShopperTrackingOptions.Sync : Swift.RawRepresentable {}
+extension LiveShopperSDK.LSQuestion.QuestionType : Swift.Equatable {}
+extension LiveShopperSDK.LSQuestion.QuestionType : Swift.Hashable {}
+extension LiveShopperSDK.LSQuestion.QuestionType : Swift.RawRepresentable {}
+extension LiveShopperSDK.LiveShopper.LSLocationSource : Swift.Equatable {}
+extension LiveShopperSDK.LiveShopper.LSLocationSource : Swift.Hashable {}
+extension LiveShopperSDK.LiveShopper.LSLocationSource : Swift.RawRepresentable {}
+extension LiveShopperSDK.LiveShopper.LSLogLevel : Swift.Equatable {}
+extension LiveShopperSDK.LiveShopper.LSLogLevel : Swift.Hashable {}
+extension LiveShopperSDK.LiveShopper.LSLogLevel : Swift.RawRepresentable {}
+extension LiveShopperSDK.LiveShopper.LSRouteUnits : Swift.Equatable {}
+extension LiveShopperSDK.LiveShopper.LSRouteUnits : Swift.Hashable {}
+extension LiveShopperSDK.LiveShopper.LSRouteUnits : Swift.RawRepresentable {}
+extension LiveShopperSDK.LiveShopper.LSStatus : Swift.Equatable {}
+extension LiveShopperSDK.LiveShopper.LSStatus : Swift.Hashable {}
+extension LiveShopperSDK.LiveShopper.LSStatus : Swift.RawRepresentable {}
+extension LiveShopperSDK.LiveShopper.LSStorageType : Swift.Equatable {}
+extension LiveShopperSDK.LiveShopper.LSStorageType : Swift.Hashable {}
+extension LiveShopperSDK.LiveShopper.LSStorageType : Swift.RawRepresentable {}
+extension LiveShopperSDK.LSTask.State : Swift.Equatable {}
+extension LiveShopperSDK.LSTask.State : Swift.Hashable {}
+extension LiveShopperSDK.LSTask.State : Swift.RawRepresentable {}
+extension LiveShopperSDK.LSAddress.Confidence : Swift.Equatable {}
+extension LiveShopperSDK.LSAddress.Confidence : Swift.Hashable {}
+extension LiveShopperSDK.LSAddress.Confidence : Swift.RawRepresentable {}
+extension LiveShopperSDK.LSUserInsights.LocationConfidence : Swift.Equatable {}
+extension LiveShopperSDK.LSUserInsights.LocationConfidence : Swift.Hashable {}
+extension LiveShopperSDK.LSUserInsights.LocationConfidence : Swift.RawRepresentable {}
+extension LiveShopperSDK.LSUserInsights.LocationType : Swift.Equatable {}
+extension LiveShopperSDK.LSUserInsights.LocationType : Swift.Hashable {}
+extension LiveShopperSDK.LSUserInsights.LocationType : Swift.RawRepresentable {}
+extension LiveShopperSDK.LSPhotoCaptureOptions.LevelType : Swift.Equatable {}
+extension LiveShopperSDK.LSPhotoCaptureOptions.LevelType : Swift.Hashable {}
+extension LiveShopperSDK.LSPhotoCaptureOptions.LevelType : Swift.RawRepresentable {}
+extension LiveShopperSDK.LSPhotoCaptureOptions.OverlayType : Swift.Equatable {}
+extension LiveShopperSDK.LSPhotoCaptureOptions.OverlayType : Swift.Hashable {}
+extension LiveShopperSDK.LSPhotoCaptureOptions.OverlayType : Swift.RawRepresentable {}
