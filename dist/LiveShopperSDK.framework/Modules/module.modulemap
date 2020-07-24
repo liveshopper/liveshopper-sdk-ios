@@ -1,0 +1,11 @@
+framework module LiveShopperSDK {
+  umbrella header "LiveShopperSDK.h"
+
+  export *
+  module * { export * }
+}
+
+module LiveShopperSDK.Swift {
+    header "LiveShopperSDK-Swift.h"
+    requires objc
+}
