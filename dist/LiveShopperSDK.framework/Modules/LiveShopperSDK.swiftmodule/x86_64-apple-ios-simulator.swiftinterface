@@ -51,17 +51,17 @@ public protocol LiveShopperSDK : AnyObject {
   static var Tasks: LiveShopperSDK.LSTasksProtocol.Type { get }
   static var Tracking: LiveShopperSDK.LSTrackingProtocol.Type { get }
   static var Users: LiveShopperSDK.LSUsersProtocol.Type { get }
+  static func initialize(publishableKey: Swift.String)
   static func createBarcodeScanner() -> (UIKit.UIViewController & LiveShopperSDK.BarcodeScannerViewControllerType)
   static func createImagePicker(question: LiveShopperSDK.LSQuestion) -> UIKit.UIImagePickerController?
   static func fromLocationSource(for source: LiveShopperSDK.LiveShopper.LSLocationSource) -> Swift.String
   static func fromStatus(for status: LiveShopperSDK.LiveShopper.LSStatus) -> Swift.String
   static func getDescription() -> Swift.String?
-  static func getLocation(completion: @escaping LiveShopperSDK.LSGetLocationCallback)
-  static func getLocation(desiredAccuracy: LiveShopperSDK.LiveShopperTrackingOptions.DesiredAccuracy, completion: @escaping LiveShopperSDK.LSGetLocationCallback)
+  static func getLocation(callback: @escaping LiveShopperSDK.LSGetLocationCallback)
+  static func getLocation(desiredAccuracy: LiveShopperSDK.LiveShopperTrackingOptions.DesiredAccuracy, callback: @escaping LiveShopperSDK.LSGetLocationCallback)
   static func getMetadata() -> [Swift.AnyHashable : Any]?
   static func getTrackingOptions() -> LiveShopperSDK.LiveShopperTrackingOptions?
   static func getUserId() -> Swift.String?
-  static func initialize(publishableKey: Swift.String)
   static func isAuthenticated() -> Swift.Bool
   static func setAdIdEnabled(_ enabled: Swift.Bool)
   static func setDelegate(_ delegate: LiveShopperSDK.LiveShopperDelegate?)
@@ -85,7 +85,7 @@ public protocol LSSearchProtocol {
   static func places(near location: CoreLocation.CLLocation, radius: Swift.Int, chains: [Swift.String]?, categories: [Swift.String]?, groups: [Swift.String]?, limit: Swift.Int, callback: @escaping LiveShopperSDK.LSSearchPlacesCallback)
   static func places(radius: Swift.Int, chains: [Swift.String]?, categories: [Swift.String]?, groups: [Swift.String]?, limit: Swift.Int, callback: @escaping LiveShopperSDK.LSSearchPlacesCallback)
   static func tasks(campaignId: Swift.String, callback: @escaping LiveShopperSDK.LSSearchTasksCallback)
-  static func tasks(locationId: Swift.String, callback: @escaping LiveShopperSDK.LSSearchTasksCallback)
+  static func tasks(placeId: Swift.String, callback: @escaping LiveShopperSDK.LSSearchTasksCallback)
   static func tasks(near location: CoreLocation.CLLocation, radius: Swift.Int, radiusToExclude: Swift.Int?, callback: @escaping LiveShopperSDK.LSSearchTasksCallback)
   static func tasks(radius: Swift.Int, radiusToExclude: Swift.Int?, callback: @escaping LiveShopperSDK.LSSearchTasksCallback)
 }
@@ -138,6 +138,9 @@ public protocol LiveShopperDelegate : ObjectiveC.NSObjectProtocol {
   func onLog(message: Swift.String)
 }
 @_hasMissingDesignatedInitializers final public class LSEvent {
+  final public var _id: Swift.String {
+    get
+  }
   final public var actualCreatedAt: Foundation.Date!
   final public var alternatePlaces: [LiveShopperSDK.LSPlace]?
   final public var confidence: LiveShopperSDK.LSEvent.Confidence
@@ -256,33 +259,40 @@ extension LSReward : Swift.Codable {
   final public func encode(to encoder: Swift.Encoder) throws
 }
 @_hasMissingDesignatedInitializers final public class LSUserInsightsLocation {
-  final public var confidence: LiveShopperSDK.LSUserInsights.LocationConfidence!
+  final public var confidence: LiveShopperSDK.LSUserInsightsLocation.Confidence!
   final public var country: LiveShopperSDK.LSRegion?
   final public var dma: LiveShopperSDK.LSRegion?
   final public var location: LiveShopperSDK.LSCoordinate?
   final public var postalCode: LiveShopperSDK.LSRegion?
   final public var state: LiveShopperSDK.LSRegion?
-  final public var type: LiveShopperSDK.LSUserInsights.LocationType!
+  final public var type: LiveShopperSDK.LSUserInsightsLocation.LocationType!
   final public var updatedAt: Foundation.Date!
+  public enum Confidence : Swift.Int, Swift.Codable {
+    case NONE
+    case LOW
+    case MEDIUM
+    case HIGH
+    public typealias RawValue = Swift.Int
+    public init?(rawValue: Swift.Int)
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+  public enum LocationType : Swift.String, Swift.Codable {
+    case UNKNOWN
+    case HOME
+    case OFFICE
+    public typealias RawValue = Swift.String
+    public init?(rawValue: Swift.String)
+    public var rawValue: Swift.String {
+      get
+    }
+  }
   @objc deinit
 }
 extension LSUserInsightsLocation : Swift.Codable {
   convenience public init(from decoder: Swift.Decoder) throws
   final public func encode(to encoder: Swift.Encoder) throws
-}
-public enum LSStorageError : Swift.Error {
-  case DEALLOCATED
-  case DECODING_FAILED
-  case ENCODING_FAILED
-  case MALFORMED_FILE_ATTRIBUTES
-  case NOT_FOUND
-  case TRANSFORMER_FAIL
-  case TYPE_NOT_MATCH
-  public static func == (a: LiveShopperSDK.LSStorageError, b: LiveShopperSDK.LSStorageError) -> Swift.Bool
-  public var hashValue: Swift.Int {
-    get
-  }
-  public func hash(into hasher: inout Swift.Hasher)
 }
 @_hasMissingDesignatedInitializers final public class LSUser {
   final public var _description: Swift.String? {
@@ -419,6 +429,7 @@ extension LSRegion : Swift.Codable {
   final public var clientReference: Swift.String?
   final public var created: Swift.Int?
   final public var criticalAnswers: [Swift.String]
+  final public var dragonId: Swift.String?
   final public var hasOther: Swift.Bool?
   final public var highValueLabel: Swift.String?
   final public var images: [Swift.String]
@@ -626,6 +637,7 @@ extension LSKeyedListPointer : Swift.Codable {
     }
   }
   public enum LSStatus : Swift.Int {
+    case SUCCESS
     case ERROR_BAD_REQUEST
     case ERROR_FORBIDDEN
     case ERROR_LOCATION
@@ -644,7 +656,6 @@ extension LSKeyedListPointer : Swift.Codable {
     case ERROR_UNAUTHORIZED
     case ERROR_UNIMPLEMENTED
     case ERROR_UNKNOWN
-    case SUCCESS
     public typealias RawValue = Swift.Int
     public init?(rawValue: Swift.Int)
     public var rawValue: Swift.Int {
@@ -660,13 +671,13 @@ extension LSKeyedListPointer : Swift.Codable {
       get
     }
   }
+  public static func initialize(publishableKey: Swift.String)
   public static func createBarcodeScanner() -> (UIKit.UIViewController & LiveShopperSDK.BarcodeScannerViewControllerType)
   public static func createImagePicker(question: LiveShopperSDK.LSQuestion) -> UIKit.UIImagePickerController?
   public static func getDescription() -> Swift.String?
   public static func getMetadata() -> [Swift.AnyHashable : Any]?
   public static func getTrackingOptions() -> LiveShopperSDK.LiveShopperTrackingOptions?
   public static func getUserId() -> Swift.String?
-  public static func initialize(publishableKey: Swift.String)
   public static func isAuthenticated() -> Swift.Bool
   public static func setAdIdEnabled(_ enabled: Swift.Bool)
   public static func setDelegate(_ delegate: LiveShopperSDK.LiveShopperDelegate?)
@@ -674,8 +685,8 @@ extension LSKeyedListPointer : Swift.Codable {
   public static func setLogLevel(_ level: LiveShopperSDK.LiveShopper.LSLogLevel)
   public static func setMetadata(_ metadata: [Swift.String : LiveShopperSDK.AnyCodable])
   public static func setUserId(_ userId: Swift.String)
-  public static func getLocation(completion: @escaping LiveShopperSDK.LSGetLocationCallback)
-  public static func getLocation(desiredAccuracy: LiveShopperSDK.LiveShopperTrackingOptions.DesiredAccuracy, completion: @escaping LiveShopperSDK.LSGetLocationCallback)
+  public static func getLocation(callback: @escaping LiveShopperSDK.LSGetLocationCallback)
+  public static func getLocation(desiredAccuracy: LiveShopperSDK.LiveShopperTrackingOptions.DesiredAccuracy, callback: @escaping LiveShopperSDK.LSGetLocationCallback)
   @objc deinit
 }
 extension LiveShopper {
@@ -721,8 +732,8 @@ extension LSRewardBarcode : Swift.Codable {
   final public func encode(to encoder: Swift.Encoder) throws
 }
 @_hasMissingDesignatedInitializers final public class LSRoute {
-  final public var distance: LiveShopperSDK.LSRouteDistance!
-  final public var duration: LiveShopperSDK.LSRouteDuration!
+  final public var distance: LiveShopperSDK.LSRouteDistance?
+  final public var duration: LiveShopperSDK.LSRouteDuration?
   @objc deinit
 }
 extension LSRoute : Swift.Codable {
@@ -800,6 +811,7 @@ extension LSSegment : Swift.Codable {
   final public var associatesOnly: Swift.Bool
   final public var claimDistanceOverride: Swift.Double?
   final public var created: Swift.Int?
+  final public var completed: Swift.Int?
   final public var description: Swift.String?
   final public var distance: Swift.Double
   final public var due: Swift.Int?
@@ -848,23 +860,23 @@ extension LSTask : Swift.Codable {
 final public class LSAddress {
   final public var address1: Swift.String?
   final public var address2: Swift.String?
-  final public var borough: Swift.String?
   final public var city: Swift.String?
   final public var confidence: LiveShopperSDK.LSAddress.Confidence!
   final public var coordinate: CoreLocation.CLLocationCoordinate2D?
   final public var country: Swift.String?
-  final public var countryCode: Swift.String?
-  final public var countryFlag: Swift.String?
-  final public var county: Swift.String?
   final public var formattedAddress: Swift.String?
   final public var geofenceRadius: Swift.Double?
   final public var name: Swift.String?
-  final public var neighborhood: Swift.String?
   final public var number: Swift.String?
   final public var phoneNumber: Swift.String?
-  final public var placeLabel: Swift.String?
   final public var postalCode: Swift.String?
   final public var state: Swift.String?
+  final public var borough: Swift.String?
+  final public var countryCode: Swift.String?
+  final public var countryFlag: Swift.String?
+  final public var county: Swift.String?
+  final public var neighborhood: Swift.String?
+  final public var placeLabel: Swift.String?
   final public var stateCode: Swift.String?
   public enum Confidence : Swift.Int, Swift.Codable {
     case NONE
@@ -919,27 +931,6 @@ extension LSScoreInterval : Swift.Codable {
   final public var homeLocation: LiveShopperSDK.LSUserInsightsLocation?
   final public var officeLocation: LiveShopperSDK.LSUserInsightsLocation?
   final public var state: LiveShopperSDK.LSUserInsightsState!
-  public enum LocationConfidence : Swift.Int, Swift.Codable {
-    case NONE
-    case LOW
-    case MEDIUM
-    case HIGH
-    public typealias RawValue = Swift.Int
-    public init?(rawValue: Swift.Int)
-    public var rawValue: Swift.Int {
-      get
-    }
-  }
-  public enum LocationType : Swift.String, Swift.Codable {
-    case UNKNOWN
-    case HOME
-    case OFFICE
-    public typealias RawValue = Swift.String
-    public init?(rawValue: Swift.String)
-    public var rawValue: Swift.String {
-      get
-    }
-  }
   @objc deinit
 }
 extension LSUserInsights : Swift.Codable {
@@ -956,8 +947,8 @@ extension LSUserInsights : Swift.Codable {
   final public var photoOverlayType: LiveShopperSDK.LSPhotoCaptureOptions.OverlayType
   final public var photoPromptText: Swift.String
   public enum LevelType : Swift.String, Swift.Codable {
-    case FLAT
     case NONE
+    case FLAT
     case VERTICAL
     public typealias RawValue = Swift.String
     public init?(rawValue: Swift.String)
@@ -966,9 +957,9 @@ extension LSUserInsights : Swift.Codable {
     }
   }
   public enum OverlayType : Swift.String, Swift.Codable {
+    case NONE
     case CIRCLE
     case CIRCLE_SQUARE
-    case NONE
     case RECTANGLE_HORIZONTAL
     case RECTANGLE_VERTICAL
     case SQUARE
@@ -998,8 +989,12 @@ extension LiveShopperSDK.LSEvent.EventType : Swift.RawRepresentable {}
 extension LiveShopperSDK.LSEvent.Verification : Swift.Equatable {}
 extension LiveShopperSDK.LSEvent.Verification : Swift.Hashable {}
 extension LiveShopperSDK.LSEvent.Verification : Swift.RawRepresentable {}
-extension LiveShopperSDK.LSStorageError : Swift.Equatable {}
-extension LiveShopperSDK.LSStorageError : Swift.Hashable {}
+extension LiveShopperSDK.LSUserInsightsLocation.Confidence : Swift.Equatable {}
+extension LiveShopperSDK.LSUserInsightsLocation.Confidence : Swift.Hashable {}
+extension LiveShopperSDK.LSUserInsightsLocation.Confidence : Swift.RawRepresentable {}
+extension LiveShopperSDK.LSUserInsightsLocation.LocationType : Swift.Equatable {}
+extension LiveShopperSDK.LSUserInsightsLocation.LocationType : Swift.Hashable {}
+extension LiveShopperSDK.LSUserInsightsLocation.LocationType : Swift.RawRepresentable {}
 extension LiveShopperSDK.LiveShopperTrackingOptions.DesiredAccuracy : Swift.Equatable {}
 extension LiveShopperSDK.LiveShopperTrackingOptions.DesiredAccuracy : Swift.Hashable {}
 extension LiveShopperSDK.LiveShopperTrackingOptions.DesiredAccuracy : Swift.RawRepresentable {}
@@ -1033,12 +1028,6 @@ extension LiveShopperSDK.LSTask.State : Swift.RawRepresentable {}
 extension LiveShopperSDK.LSAddress.Confidence : Swift.Equatable {}
 extension LiveShopperSDK.LSAddress.Confidence : Swift.Hashable {}
 extension LiveShopperSDK.LSAddress.Confidence : Swift.RawRepresentable {}
-extension LiveShopperSDK.LSUserInsights.LocationConfidence : Swift.Equatable {}
-extension LiveShopperSDK.LSUserInsights.LocationConfidence : Swift.Hashable {}
-extension LiveShopperSDK.LSUserInsights.LocationConfidence : Swift.RawRepresentable {}
-extension LiveShopperSDK.LSUserInsights.LocationType : Swift.Equatable {}
-extension LiveShopperSDK.LSUserInsights.LocationType : Swift.Hashable {}
-extension LiveShopperSDK.LSUserInsights.LocationType : Swift.RawRepresentable {}
 extension LiveShopperSDK.LSPhotoCaptureOptions.LevelType : Swift.Equatable {}
 extension LiveShopperSDK.LSPhotoCaptureOptions.LevelType : Swift.Hashable {}
 extension LiveShopperSDK.LSPhotoCaptureOptions.LevelType : Swift.RawRepresentable {}
