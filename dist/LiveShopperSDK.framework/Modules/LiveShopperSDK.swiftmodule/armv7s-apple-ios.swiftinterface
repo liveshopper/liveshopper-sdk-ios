@@ -30,20 +30,6 @@ extension LSGeofence : Swift.Codable {
   convenience public init(from decoder: Swift.Decoder) throws
   final public func encode(to encoder: Swift.Encoder) throws
 }
-public typealias LSAddPlaceCallback = (LiveShopperSDK.LiveShopper.LSStatus, [LiveShopperSDK.LSPlace]?) -> Swift.Void
-public typealias LSAutocompleteCallback = (LiveShopperSDK.LiveShopper.LSStatus, [LiveShopperSDK.LSAddress]?) -> Swift.Void
-public typealias LSClaimRewardCallback = (LiveShopperSDK.LiveShopper.LSStatus, LiveShopperSDK.LSReward?) -> Swift.Void
-public typealias LSClaimTaskCallback = (LiveShopperSDK.LiveShopper.LSStatus, LiveShopperSDK.LSTask?) -> Swift.Void
-public typealias LSDeleteUserCallback = (LiveShopperSDK.LiveShopper.LSStatus, Swift.Bool) -> Swift.Void
-public typealias LSGetLocationCallback = (LiveShopperSDK.LiveShopper.LSStatus, CoreLocation.CLLocation?, Swift.Bool) -> Swift.Void
-public typealias LSGetUserCallback = (LiveShopperSDK.LiveShopper.LSStatus, LiveShopperSDK.LSUser?) -> Swift.Void
-public typealias LSListRewardsCallback = (LiveShopperSDK.LiveShopper.LSStatus, [LiveShopperSDK.LSReward]?) -> Swift.Void
-public typealias LSListUsersCallback = (LiveShopperSDK.LiveShopper.LSStatus, [LiveShopperSDK.LSUser]?) -> Swift.Void
-public typealias LSSaveTaskResponseCallback = (LiveShopperSDK.LiveShopper.LSStatus, LiveShopperSDK.LSTaskResponse?, LiveShopperSDK.LSTaskResponse.SubmitError?) -> Swift.Void
-public typealias LSSearchGeofencesCallback = (LiveShopperSDK.LiveShopper.LSStatus, CoreLocation.CLLocation?, [LiveShopperSDK.LSGeofence]?) -> Swift.Void
-public typealias LSSearchPlacesCallback = (LiveShopperSDK.LiveShopper.LSStatus, CoreLocation.CLLocation?, [LiveShopperSDK.LSPlace]?) -> Swift.Void
-public typealias LSSearchTasksCallback = (LiveShopperSDK.LiveShopper.LSStatus, CoreLocation.CLLocation?, [LiveShopperSDK.LSTask]?) -> Swift.Void
-public typealias LSTrackingCallback = (LiveShopperSDK.LiveShopper.LSStatus, CoreLocation.CLLocation?, [LiveShopperSDK.LSEvent]?, LiveShopperSDK.LSUser?) -> Swift.Void
 public protocol LiveShopperSDK : AnyObject {
   static var Places: LiveShopperSDK.LSPlacesProtocol.Type { get }
   static var Rewards: LiveShopperSDK.LSRewardsProtocol.Type { get }
@@ -71,6 +57,7 @@ public protocol LiveShopperSDK : AnyObject {
   static func setUserId(_ userId: Swift.String)
 }
 public protocol LSPlacesProtocol {
+  static func clear() -> Swift.Bool
   static func create(place: LiveShopperSDK.LSPlace, storage: LiveShopperSDK.LiveShopper.LSStorageType, callback: @escaping LiveShopperSDK.LSAddPlaceCallback)
   static func create(places: [LiveShopperSDK.LSPlace], storage: LiveShopperSDK.LiveShopper.LSStorageType, callback: @escaping LiveShopperSDK.LSAddPlaceCallback)
 }
@@ -760,6 +747,20 @@ extension LSUserInsightsState : Swift.Codable {
   convenience public init(from decoder: Swift.Decoder) throws
   final public func encode(to encoder: Swift.Encoder) throws
 }
+public typealias LSAddPlaceCallback = (LiveShopperSDK.LiveShopper.LSStatus, [LiveShopperSDK.LSPlace]?) -> Swift.Void
+public typealias LSAutocompleteCallback = (LiveShopperSDK.LiveShopper.LSStatus, [LiveShopperSDK.LSAddress]?) -> Swift.Void
+public typealias LSClaimRewardCallback = (LiveShopperSDK.LiveShopper.LSStatus, LiveShopperSDK.LSReward?) -> Swift.Void
+public typealias LSClaimTaskCallback = (LiveShopperSDK.LiveShopper.LSStatus, LiveShopperSDK.LSTask?) -> Swift.Void
+public typealias LSDeleteUserCallback = (LiveShopperSDK.LiveShopper.LSStatus, Swift.Bool) -> Swift.Void
+public typealias LSGetLocationCallback = (LiveShopperSDK.LiveShopper.LSStatus, CoreLocation.CLLocation?, Swift.Bool) -> Swift.Void
+public typealias LSGetUserCallback = (LiveShopperSDK.LiveShopper.LSStatus, LiveShopperSDK.LSUser?) -> Swift.Void
+public typealias LSListRewardsCallback = (LiveShopperSDK.LiveShopper.LSStatus, [LiveShopperSDK.LSReward]?) -> Swift.Void
+public typealias LSListUsersCallback = (LiveShopperSDK.LiveShopper.LSStatus, [LiveShopperSDK.LSUser]?) -> Swift.Void
+public typealias LSSaveTaskResponseCallback = (LiveShopperSDK.LiveShopper.LSStatus, LiveShopperSDK.LSTaskResponse?, LiveShopperSDK.LSTaskResponse.SubmitError?) -> Swift.Void
+public typealias LSSearchGeofencesCallback = (LiveShopperSDK.LiveShopper.LSStatus, CoreLocation.CLLocation?, [LiveShopperSDK.LSGeofence]?) -> Swift.Void
+public typealias LSSearchPlacesCallback = (LiveShopperSDK.LiveShopper.LSStatus, CoreLocation.CLLocation?, [LiveShopperSDK.LSPlace]?) -> Swift.Void
+public typealias LSSearchTasksCallback = (LiveShopperSDK.LiveShopper.LSStatus, CoreLocation.CLLocation?, [LiveShopperSDK.LSTask]?) -> Swift.Void
+public typealias LSTrackingCallback = (LiveShopperSDK.LiveShopper.LSStatus, CoreLocation.CLLocation?, [LiveShopperSDK.LSEvent]?, LiveShopperSDK.LSUser?) -> Swift.Void
 public class LSGeofenceGeometry : Swift.Codable {
   public init()
   required public init(from _: Swift.Decoder) throws
