@@ -6,15 +6,15 @@
 	<dict>
 		<key>Assets.car</key>
 		<data>
-		XavOgteK3ayb7PGXbOsrDfoamUo=
+		YG7hS2OHNv9+TAkAyYaANKtOHr0=
 		</data>
 		<key>BarcodeScannerViewController.nib</key>
 		<data>
-		O6w6aFOeQe2G5B8NdGCIgrhePjc=
+		8yMK+uwYuQaKoPuqgr6b38Vb5M0=
 		</data>
 		<key>CameraOverlayView.nib</key>
 		<data>
-		nQPD6Lv905kKYOdK3pWlyH9Xz0o=
+		OusKnzW1FLY5fDV07+e56ZtYrtU=
 		</data>
 		<key>Headers/LiveShopperSDK-Swift.h</key>
 		<data>
@@ -30,115 +30,115 @@
 		</data>
 		<key>Modules/LiveShopperSDK.swiftmodule/Project/arm.swiftsourceinfo</key>
 		<data>
-		IQwcUosH8kNXkxGo60sAp6s0mLg=
+		9tKIi0yUd7zVMoGtRhrZDGq8pzk=
 		</data>
 		<key>Modules/LiveShopperSDK.swiftmodule/Project/arm64-apple-ios.swiftsourceinfo</key>
 		<data>
-		cQBQP4LunZhq1Tn4OD1m5OjBAvE=
+		AF7JnRgpAV1TxLVXcEADhjeZ7Js=
 		</data>
 		<key>Modules/LiveShopperSDK.swiftmodule/Project/arm64.swiftsourceinfo</key>
 		<data>
-		cQBQP4LunZhq1Tn4OD1m5OjBAvE=
+		AF7JnRgpAV1TxLVXcEADhjeZ7Js=
 		</data>
 		<key>Modules/LiveShopperSDK.swiftmodule/Project/armv7-apple-ios.swiftsourceinfo</key>
 		<data>
-		IQwcUosH8kNXkxGo60sAp6s0mLg=
+		9tKIi0yUd7zVMoGtRhrZDGq8pzk=
 		</data>
 		<key>Modules/LiveShopperSDK.swiftmodule/Project/armv7.swiftsourceinfo</key>
 		<data>
-		IQwcUosH8kNXkxGo60sAp6s0mLg=
+		9tKIi0yUd7zVMoGtRhrZDGq8pzk=
 		</data>
 		<key>Modules/LiveShopperSDK.swiftmodule/Project/armv7s-apple-ios.swiftsourceinfo</key>
 		<data>
-		gGgjDmFBhus0eD2wH1GoQtJm+KI=
+		1V1BW9eM5t+BPx5tA0dFciuGWeY=
 		</data>
 		<key>Modules/LiveShopperSDK.swiftmodule/Project/armv7s.swiftsourceinfo</key>
 		<data>
-		gGgjDmFBhus0eD2wH1GoQtJm+KI=
+		1V1BW9eM5t+BPx5tA0dFciuGWeY=
 		</data>
 		<key>Modules/LiveShopperSDK.swiftmodule/arm.swiftdoc</key>
 		<data>
-		nMQ/rVMGTGHiNzyD7c+29gLsYVY=
+		91eOVyyit4Yj5k5VXJgVlUB/6f4=
 		</data>
 		<key>Modules/LiveShopperSDK.swiftmodule/arm.swiftinterface</key>
 		<data>
-		ZCa9fqgsh4Ut2N/G9ePVFRxLyco=
+		V5uCFrqd5nyl/+zh6+ci/OjixMA=
 		</data>
 		<key>Modules/LiveShopperSDK.swiftmodule/arm.swiftmodule</key>
 		<data>
-		PUDHR6x471/nqS8aT34Qzn7gWH8=
+		3Q3PxwBcpTHMNTYqUsf4K/GSgPM=
 		</data>
 		<key>Modules/LiveShopperSDK.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
-		6nEl7USdnAiev/Gk6sHWWWOqr9w=
+		uukzc6as5fdO8CHZj1Hqs7W4wOY=
 		</data>
 		<key>Modules/LiveShopperSDK.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<data>
-		+dJqgBFCgYD1FGEZnZ3G0DEZHJc=
+		T9FX31xIehqOMc2wNprEoO/Jkro=
 		</data>
 		<key>Modules/LiveShopperSDK.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		/0Jb3PsxAZAiFBisRy9xKhqSRVY=
+		A2GbB/UhelGzbU3wKuI65IZhdDI=
 		</data>
 		<key>Modules/LiveShopperSDK.swiftmodule/arm64.swiftdoc</key>
 		<data>
-		6nEl7USdnAiev/Gk6sHWWWOqr9w=
+		uukzc6as5fdO8CHZj1Hqs7W4wOY=
 		</data>
 		<key>Modules/LiveShopperSDK.swiftmodule/arm64.swiftinterface</key>
 		<data>
-		+dJqgBFCgYD1FGEZnZ3G0DEZHJc=
+		T9FX31xIehqOMc2wNprEoO/Jkro=
 		</data>
 		<key>Modules/LiveShopperSDK.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		/0Jb3PsxAZAiFBisRy9xKhqSRVY=
+		A2GbB/UhelGzbU3wKuI65IZhdDI=
 		</data>
 		<key>Modules/LiveShopperSDK.swiftmodule/armv7-apple-ios.swiftdoc</key>
 		<data>
-		nMQ/rVMGTGHiNzyD7c+29gLsYVY=
+		91eOVyyit4Yj5k5VXJgVlUB/6f4=
 		</data>
 		<key>Modules/LiveShopperSDK.swiftmodule/armv7-apple-ios.swiftinterface</key>
 		<data>
-		ZCa9fqgsh4Ut2N/G9ePVFRxLyco=
+		V5uCFrqd5nyl/+zh6+ci/OjixMA=
 		</data>
 		<key>Modules/LiveShopperSDK.swiftmodule/armv7-apple-ios.swiftmodule</key>
 		<data>
-		PUDHR6x471/nqS8aT34Qzn7gWH8=
+		3Q3PxwBcpTHMNTYqUsf4K/GSgPM=
 		</data>
 		<key>Modules/LiveShopperSDK.swiftmodule/armv7.swiftdoc</key>
 		<data>
-		nMQ/rVMGTGHiNzyD7c+29gLsYVY=
+		91eOVyyit4Yj5k5VXJgVlUB/6f4=
 		</data>
 		<key>Modules/LiveShopperSDK.swiftmodule/armv7.swiftinterface</key>
 		<data>
-		ZCa9fqgsh4Ut2N/G9ePVFRxLyco=
+		V5uCFrqd5nyl/+zh6+ci/OjixMA=
 		</data>
 		<key>Modules/LiveShopperSDK.swiftmodule/armv7.swiftmodule</key>
 		<data>
-		PUDHR6x471/nqS8aT34Qzn7gWH8=
+		3Q3PxwBcpTHMNTYqUsf4K/GSgPM=
 		</data>
 		<key>Modules/LiveShopperSDK.swiftmodule/armv7s-apple-ios.swiftdoc</key>
 		<data>
-		l9BXBx8CHCATo3YWNLNM4qeRNlc=
+		73x7QpzJgPqHEeP4cYbgvL6poGE=
 		</data>
 		<key>Modules/LiveShopperSDK.swiftmodule/armv7s-apple-ios.swiftinterface</key>
 		<data>
-		2bxRMgiDJI2THFEMFTZCf1ykyXc=
+		cfISkRFbm8+5aKio0wk7K/3HVNY=
 		</data>
 		<key>Modules/LiveShopperSDK.swiftmodule/armv7s-apple-ios.swiftmodule</key>
 		<data>
-		gIxvfDDBj6KgY/BFjr9yXJydtFM=
+		V9fxziR9dUjl5SyT6uVXGr7vrvs=
 		</data>
 		<key>Modules/LiveShopperSDK.swiftmodule/armv7s.swiftdoc</key>
 		<data>
-		l9BXBx8CHCATo3YWNLNM4qeRNlc=
+		73x7QpzJgPqHEeP4cYbgvL6poGE=
 		</data>
 		<key>Modules/LiveShopperSDK.swiftmodule/armv7s.swiftinterface</key>
 		<data>
-		2bxRMgiDJI2THFEMFTZCf1ykyXc=
+		cfISkRFbm8+5aKio0wk7K/3HVNY=
 		</data>
 		<key>Modules/LiveShopperSDK.swiftmodule/armv7s.swiftmodule</key>
 		<data>
-		gIxvfDDBj6KgY/BFjr9yXJydtFM=
+		V9fxziR9dUjl5SyT6uVXGr7vrvs=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -151,33 +151,33 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			XavOgteK3ayb7PGXbOsrDfoamUo=
+			YG7hS2OHNv9+TAkAyYaANKtOHr0=
 			</data>
 			<key>hash2</key>
 			<data>
-			1fRx8TJtiKqz047bg5Rxgo/g/IDfGujq0GTgAyo4Qc4=
+			eClYjbNADcigDj/hKy36MoF1WpCMsGndwxYJ0yVJdRQ=
 			</data>
 		</dict>
 		<key>BarcodeScannerViewController.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			O6w6aFOeQe2G5B8NdGCIgrhePjc=
+			8yMK+uwYuQaKoPuqgr6b38Vb5M0=
 			</data>
 			<key>hash2</key>
 			<data>
-			b8ufWFLvgS9SkLVCuqfelwdr2KCPR+szPWv/FCQ/VO8=
+			Nti4pgVrAR1qaJiWIMAtfKwd9JS5u/7MY0zjDl0kRq4=
 			</data>
 		</dict>
 		<key>CameraOverlayView.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			nQPD6Lv905kKYOdK3pWlyH9Xz0o=
+			OusKnzW1FLY5fDV07+e56ZtYrtU=
 			</data>
 			<key>hash2</key>
 			<data>
-			mJxqTQj1cK0TeV3eOnY1/itlfT4NVRX7GRzqDjweUgU=
+			4DaELRNSu3et8wCpRQK7pzFIhcE/KHsSJqc/0PJN6/M=
 			</data>
 		</dict>
 		<key>Headers/LiveShopperSDK-Swift.h</key>
@@ -206,308 +206,308 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			IQwcUosH8kNXkxGo60sAp6s0mLg=
+			9tKIi0yUd7zVMoGtRhrZDGq8pzk=
 			</data>
 			<key>hash2</key>
 			<data>
-			jJw7ddKVu2q2HRgYOSA+6eD/vgotZsAIBJmGJpCFT/o=
+			5o8VCXUXANY9gAuTnQGbaWaNGQ5PGSFx/yswIPAo+so=
 			</data>
 		</dict>
 		<key>Modules/LiveShopperSDK.swiftmodule/Project/arm64-apple-ios.swiftsourceinfo</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			cQBQP4LunZhq1Tn4OD1m5OjBAvE=
+			AF7JnRgpAV1TxLVXcEADhjeZ7Js=
 			</data>
 			<key>hash2</key>
 			<data>
-			jVkKHRmp8SV3VvoQrIPjhkCWzwQivgPcU80GkdgIehI=
+			x23Mlyr10jesd7d/4gNm/3zjfL5fiNFhR4eRnRLhnec=
 			</data>
 		</dict>
 		<key>Modules/LiveShopperSDK.swiftmodule/Project/arm64.swiftsourceinfo</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			cQBQP4LunZhq1Tn4OD1m5OjBAvE=
+			AF7JnRgpAV1TxLVXcEADhjeZ7Js=
 			</data>
 			<key>hash2</key>
 			<data>
-			jVkKHRmp8SV3VvoQrIPjhkCWzwQivgPcU80GkdgIehI=
+			x23Mlyr10jesd7d/4gNm/3zjfL5fiNFhR4eRnRLhnec=
 			</data>
 		</dict>
 		<key>Modules/LiveShopperSDK.swiftmodule/Project/armv7-apple-ios.swiftsourceinfo</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			IQwcUosH8kNXkxGo60sAp6s0mLg=
+			9tKIi0yUd7zVMoGtRhrZDGq8pzk=
 			</data>
 			<key>hash2</key>
 			<data>
-			jJw7ddKVu2q2HRgYOSA+6eD/vgotZsAIBJmGJpCFT/o=
+			5o8VCXUXANY9gAuTnQGbaWaNGQ5PGSFx/yswIPAo+so=
 			</data>
 		</dict>
 		<key>Modules/LiveShopperSDK.swiftmodule/Project/armv7.swiftsourceinfo</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			IQwcUosH8kNXkxGo60sAp6s0mLg=
+			9tKIi0yUd7zVMoGtRhrZDGq8pzk=
 			</data>
 			<key>hash2</key>
 			<data>
-			jJw7ddKVu2q2HRgYOSA+6eD/vgotZsAIBJmGJpCFT/o=
+			5o8VCXUXANY9gAuTnQGbaWaNGQ5PGSFx/yswIPAo+so=
 			</data>
 		</dict>
 		<key>Modules/LiveShopperSDK.swiftmodule/Project/armv7s-apple-ios.swiftsourceinfo</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			gGgjDmFBhus0eD2wH1GoQtJm+KI=
+			1V1BW9eM5t+BPx5tA0dFciuGWeY=
 			</data>
 			<key>hash2</key>
 			<data>
-			2Tfp9eRB/ERK9JIH4hXvbmRKCSgimHzk606pP2dk/6k=
+			Cnpe15xAee2anPLUdB8di1av+TU6+ETgbuLeJpRs2Sk=
 			</data>
 		</dict>
 		<key>Modules/LiveShopperSDK.swiftmodule/Project/armv7s.swiftsourceinfo</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			gGgjDmFBhus0eD2wH1GoQtJm+KI=
+			1V1BW9eM5t+BPx5tA0dFciuGWeY=
 			</data>
 			<key>hash2</key>
 			<data>
-			2Tfp9eRB/ERK9JIH4hXvbmRKCSgimHzk606pP2dk/6k=
+			Cnpe15xAee2anPLUdB8di1av+TU6+ETgbuLeJpRs2Sk=
 			</data>
 		</dict>
 		<key>Modules/LiveShopperSDK.swiftmodule/arm.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			nMQ/rVMGTGHiNzyD7c+29gLsYVY=
+			91eOVyyit4Yj5k5VXJgVlUB/6f4=
 			</data>
 			<key>hash2</key>
 			<data>
-			Is4tQvmNxHJ5X5g8aKlsaa2luV9RGU+GrUlzaFj+voA=
+			7qzKK8IcIhnVqgqCGP8kxj6eTYT7cOGWJx+gWGfBsSc=
 			</data>
 		</dict>
 		<key>Modules/LiveShopperSDK.swiftmodule/arm.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			ZCa9fqgsh4Ut2N/G9ePVFRxLyco=
+			V5uCFrqd5nyl/+zh6+ci/OjixMA=
 			</data>
 			<key>hash2</key>
 			<data>
-			rE4HXzF31IQdWQvFuKwgEeyk6nOciVBegxpji6CtTUA=
+			IsWj5XuEZownuMgBCfyzylq0ykAhfpFdb0m4l7HMtzE=
 			</data>
 		</dict>
 		<key>Modules/LiveShopperSDK.swiftmodule/arm.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			PUDHR6x471/nqS8aT34Qzn7gWH8=
+			3Q3PxwBcpTHMNTYqUsf4K/GSgPM=
 			</data>
 			<key>hash2</key>
 			<data>
-			aY9MhwNMf34PBfYZPR292+ixJMdXdIyIRHILY6m3ouo=
+			aQtqhTG2ZTe+MPyiuSKtCoWiSgCFQ/r+3Gef2L39XJ0=
 			</data>
 		</dict>
 		<key>Modules/LiveShopperSDK.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			6nEl7USdnAiev/Gk6sHWWWOqr9w=
+			uukzc6as5fdO8CHZj1Hqs7W4wOY=
 			</data>
 			<key>hash2</key>
 			<data>
-			PuCDe9jWsW+o6zTFN2A3Q+E7Eox5C1XVR3X87TlvaeU=
+			Wf+bRZMl/aRt7Gg+G4wR0TzyM5U0jZmsSXMkPmyxUPo=
 			</data>
 		</dict>
 		<key>Modules/LiveShopperSDK.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			+dJqgBFCgYD1FGEZnZ3G0DEZHJc=
+			T9FX31xIehqOMc2wNprEoO/Jkro=
 			</data>
 			<key>hash2</key>
 			<data>
-			/tsHHJGn538IZSdG2Oi129tLAaqP2TizoX9mxuaGNvs=
+			JUf5cMhhWXvRnMRYEgn9H/2hoxITHM+w6EHHs4odlco=
 			</data>
 		</dict>
 		<key>Modules/LiveShopperSDK.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			/0Jb3PsxAZAiFBisRy9xKhqSRVY=
+			A2GbB/UhelGzbU3wKuI65IZhdDI=
 			</data>
 			<key>hash2</key>
 			<data>
-			mLYbULWpP34gxlNDp0/4MPrRZkGCEX9RqsMJYUWKksg=
+			EzAiYDTdEU+T3N0866fFdh1YCI14Xkep195SzdtD/IU=
 			</data>
 		</dict>
 		<key>Modules/LiveShopperSDK.swiftmodule/arm64.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			6nEl7USdnAiev/Gk6sHWWWOqr9w=
+			uukzc6as5fdO8CHZj1Hqs7W4wOY=
 			</data>
 			<key>hash2</key>
 			<data>
-			PuCDe9jWsW+o6zTFN2A3Q+E7Eox5C1XVR3X87TlvaeU=
+			Wf+bRZMl/aRt7Gg+G4wR0TzyM5U0jZmsSXMkPmyxUPo=
 			</data>
 		</dict>
 		<key>Modules/LiveShopperSDK.swiftmodule/arm64.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			+dJqgBFCgYD1FGEZnZ3G0DEZHJc=
+			T9FX31xIehqOMc2wNprEoO/Jkro=
 			</data>
 			<key>hash2</key>
 			<data>
-			/tsHHJGn538IZSdG2Oi129tLAaqP2TizoX9mxuaGNvs=
+			JUf5cMhhWXvRnMRYEgn9H/2hoxITHM+w6EHHs4odlco=
 			</data>
 		</dict>
 		<key>Modules/LiveShopperSDK.swiftmodule/arm64.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			/0Jb3PsxAZAiFBisRy9xKhqSRVY=
+			A2GbB/UhelGzbU3wKuI65IZhdDI=
 			</data>
 			<key>hash2</key>
 			<data>
-			mLYbULWpP34gxlNDp0/4MPrRZkGCEX9RqsMJYUWKksg=
+			EzAiYDTdEU+T3N0866fFdh1YCI14Xkep195SzdtD/IU=
 			</data>
 		</dict>
 		<key>Modules/LiveShopperSDK.swiftmodule/armv7-apple-ios.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			nMQ/rVMGTGHiNzyD7c+29gLsYVY=
+			91eOVyyit4Yj5k5VXJgVlUB/6f4=
 			</data>
 			<key>hash2</key>
 			<data>
-			Is4tQvmNxHJ5X5g8aKlsaa2luV9RGU+GrUlzaFj+voA=
+			7qzKK8IcIhnVqgqCGP8kxj6eTYT7cOGWJx+gWGfBsSc=
 			</data>
 		</dict>
 		<key>Modules/LiveShopperSDK.swiftmodule/armv7-apple-ios.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			ZCa9fqgsh4Ut2N/G9ePVFRxLyco=
+			V5uCFrqd5nyl/+zh6+ci/OjixMA=
 			</data>
 			<key>hash2</key>
 			<data>
-			rE4HXzF31IQdWQvFuKwgEeyk6nOciVBegxpji6CtTUA=
+			IsWj5XuEZownuMgBCfyzylq0ykAhfpFdb0m4l7HMtzE=
 			</data>
 		</dict>
 		<key>Modules/LiveShopperSDK.swiftmodule/armv7-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			PUDHR6x471/nqS8aT34Qzn7gWH8=
+			3Q3PxwBcpTHMNTYqUsf4K/GSgPM=
 			</data>
 			<key>hash2</key>
 			<data>
-			aY9MhwNMf34PBfYZPR292+ixJMdXdIyIRHILY6m3ouo=
+			aQtqhTG2ZTe+MPyiuSKtCoWiSgCFQ/r+3Gef2L39XJ0=
 			</data>
 		</dict>
 		<key>Modules/LiveShopperSDK.swiftmodule/armv7.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			nMQ/rVMGTGHiNzyD7c+29gLsYVY=
+			91eOVyyit4Yj5k5VXJgVlUB/6f4=
 			</data>
 			<key>hash2</key>
 			<data>
-			Is4tQvmNxHJ5X5g8aKlsaa2luV9RGU+GrUlzaFj+voA=
+			7qzKK8IcIhnVqgqCGP8kxj6eTYT7cOGWJx+gWGfBsSc=
 			</data>
 		</dict>
 		<key>Modules/LiveShopperSDK.swiftmodule/armv7.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			ZCa9fqgsh4Ut2N/G9ePVFRxLyco=
+			V5uCFrqd5nyl/+zh6+ci/OjixMA=
 			</data>
 			<key>hash2</key>
 			<data>
-			rE4HXzF31IQdWQvFuKwgEeyk6nOciVBegxpji6CtTUA=
+			IsWj5XuEZownuMgBCfyzylq0ykAhfpFdb0m4l7HMtzE=
 			</data>
 		</dict>
 		<key>Modules/LiveShopperSDK.swiftmodule/armv7.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			PUDHR6x471/nqS8aT34Qzn7gWH8=
+			3Q3PxwBcpTHMNTYqUsf4K/GSgPM=
 			</data>
 			<key>hash2</key>
 			<data>
-			aY9MhwNMf34PBfYZPR292+ixJMdXdIyIRHILY6m3ouo=
+			aQtqhTG2ZTe+MPyiuSKtCoWiSgCFQ/r+3Gef2L39XJ0=
 			</data>
 		</dict>
 		<key>Modules/LiveShopperSDK.swiftmodule/armv7s-apple-ios.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			l9BXBx8CHCATo3YWNLNM4qeRNlc=
+			73x7QpzJgPqHEeP4cYbgvL6poGE=
 			</data>
 			<key>hash2</key>
 			<data>
-			HABtvYHsLRu6PGe/o8ZlQutHRuvHtiEniM6U4RPGsVg=
+			CBuvrRw0w38n46htxDSeUA/8yvoLRGA49bAtjq9jsRQ=
 			</data>
 		</dict>
 		<key>Modules/LiveShopperSDK.swiftmodule/armv7s-apple-ios.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			2bxRMgiDJI2THFEMFTZCf1ykyXc=
+			cfISkRFbm8+5aKio0wk7K/3HVNY=
 			</data>
 			<key>hash2</key>
 			<data>
-			N9VxolnOFZttbQ54gbBv1PsVI0RCUys3eEEwSitHqww=
+			NkMLq9wsdLSTBh39+Q0qVTzV3+4cWipFr+VRtVRaR1I=
 			</data>
 		</dict>
 		<key>Modules/LiveShopperSDK.swiftmodule/armv7s-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			gIxvfDDBj6KgY/BFjr9yXJydtFM=
+			V9fxziR9dUjl5SyT6uVXGr7vrvs=
 			</data>
 			<key>hash2</key>
 			<data>
-			K2zdPzfUnWwTnRieQSte7+tKk4UxlHvA4qbxvkvaWbk=
+			Sf+ej44GBsCAmb70v6+hnA9JgaCji81O6UxZdKdBP0A=
 			</data>
 		</dict>
 		<key>Modules/LiveShopperSDK.swiftmodule/armv7s.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			l9BXBx8CHCATo3YWNLNM4qeRNlc=
+			73x7QpzJgPqHEeP4cYbgvL6poGE=
 			</data>
 			<key>hash2</key>
 			<data>
-			HABtvYHsLRu6PGe/o8ZlQutHRuvHtiEniM6U4RPGsVg=
+			CBuvrRw0w38n46htxDSeUA/8yvoLRGA49bAtjq9jsRQ=
 			</data>
 		</dict>
 		<key>Modules/LiveShopperSDK.swiftmodule/armv7s.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			2bxRMgiDJI2THFEMFTZCf1ykyXc=
+			cfISkRFbm8+5aKio0wk7K/3HVNY=
 			</data>
 			<key>hash2</key>
 			<data>
-			N9VxolnOFZttbQ54gbBv1PsVI0RCUys3eEEwSitHqww=
+			NkMLq9wsdLSTBh39+Q0qVTzV3+4cWipFr+VRtVRaR1I=
 			</data>
 		</dict>
 		<key>Modules/LiveShopperSDK.swiftmodule/armv7s.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			gIxvfDDBj6KgY/BFjr9yXJydtFM=
+			V9fxziR9dUjl5SyT6uVXGr7vrvs=
 			</data>
 			<key>hash2</key>
 			<data>
-			K2zdPzfUnWwTnRieQSte7+tKk4UxlHvA4qbxvkvaWbk=
+			Sf+ej44GBsCAmb70v6+hnA9JgaCji81O6UxZdKdBP0A=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
