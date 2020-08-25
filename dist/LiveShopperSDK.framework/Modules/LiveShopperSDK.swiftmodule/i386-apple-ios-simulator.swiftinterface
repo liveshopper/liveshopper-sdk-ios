@@ -168,6 +168,7 @@ public protocol LiveShopperDelegate : ObjectiveC.NSObjectProtocol {
     case USER_EXITED_REGION_COUNTRY
     case USER_EXITED_REGION_DMA
     case USER_EXITED_REGION_STATE
+    case USER_DWELLED_PLACE
     case USER_NEARBY_PLACE_CHAIN
     case USER_STARTED_COMMUTING
     case USER_STARTED_TRAVELING
