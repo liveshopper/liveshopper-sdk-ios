@@ -49,7 +49,7 @@ The best way to add the SDK to your project is via CocoaPods.
 For CocoaPods, add the following to your `Podfile`:
 
 ```bash
-pod 'LiveShopperSDK', '~> 0.1.1'
+pod 'LiveShopperSDK', '~> 0.2.0'
 ```
 
 Then, run `pod install`.
@@ -59,13 +59,13 @@ Then, run `pod install`.
 To include LiveShopper as a Github origin in Carthage, add the following to your `Cartfile`:
 
 ```bash
-github "liveshopper/liveshopper-sdk-ios"  ~> 0.1.1
+github "liveshopper/liveshopper-sdk-ios"  ~> 0.2.0
 ```
 
 To include LiveShopper as a binary origin in Carthage, add the following to your `Cartfile`:
 
 ```bash
-binary "https://raw.githubusercontent.com/liveshopper/liveshopper-sdk-ios/master/LiveShopperSDK.json"  ~> 0.1.1
+binary "https://raw.githubusercontent.com/liveshopper/liveshopper-sdk-ios/master/LiveShopperSDK.json"  ~> 0.2.0
 ```
 
 ### Add manually
