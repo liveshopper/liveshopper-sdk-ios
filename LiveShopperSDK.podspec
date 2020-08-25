@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
     spec.name                   = 'LiveShopperSDK'
-    spec.version                = '0.1.1'
+    spec.version                = '0.2.0'
     spec.summary                = 'Official LiveShopper SDK for iOS to access LiveShopper Platform.'
     spec.homepage               = 'https://liveshopper.com'
     spec.description            = <<-DESC
@@ -20,6 +20,6 @@ Pod::Spec.new do |spec|
     spec.requires_arc           = true
     spec.source                 = { :git => 'https://github.com/liveshopper/liveshopper-sdk-ios.git', :tag => spec.version.to_s }
     spec.source_files           = 'dist/LiveShopperSDK.framework/Headers/*.h'
-    spec.swift_versions         = ['5.0', '5.1']
+    spec.swift_versions         = ['5.0', '5.1', '5.2']
     spec.vendored_frameworks    = 'dist/LiveShopperSDK.framework'
   end
