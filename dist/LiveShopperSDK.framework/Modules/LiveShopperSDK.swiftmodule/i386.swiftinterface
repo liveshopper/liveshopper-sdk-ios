@@ -663,6 +663,7 @@ extension LSKeyedListPointer : Swift.Codable {
   public static func createBarcodeScanner() -> (UIKit.UIViewController & LiveShopperSDK.BarcodeScannerViewControllerType)
   public static func createImagePicker(question: LiveShopperSDK.LSQuestion) -> UIKit.UIImagePickerController?
   public static func getDescription() -> Swift.String?
+  public static func getLogLevel() -> LiveShopperSDK.LiveShopper.LSLogLevel
   public static func getMetadata() -> [Swift.AnyHashable : Any]?
   public static func getTrackingOptions() -> LiveShopperSDK.LiveShopperTrackingOptions?
   public static func getUserId() -> Swift.String?
@@ -809,7 +810,7 @@ extension LSSegment : Swift.Codable {
   convenience public init(from decoder: Swift.Decoder) throws
   final public func encode(to encoder: Swift.Encoder) throws
 }
-@_hasMissingDesignatedInitializers final public class LSTask : Swift.Hashable {
+final public class LSTask : Swift.Hashable {
   final public var associatesOnly: Swift.Bool
   final public var claimDistanceOverride: Swift.Double?
   final public var created: Swift.Int?
@@ -847,6 +848,7 @@ extension LSSegment : Swift.Codable {
     }
     public init?(rawValue: Swift.String)
   }
+  public init()
   @objc deinit
   final public var hashValue: Swift.Int {
     get
