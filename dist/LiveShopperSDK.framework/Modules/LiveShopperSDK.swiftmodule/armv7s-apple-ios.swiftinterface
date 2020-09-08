@@ -23,6 +23,16 @@ import UIKit
   final public var geometry: LiveShopperSDK.LSGeofenceGeometry!
   final public var metadata: [Swift.String : LiveShopperSDK.AnyCodable]?
   final public var tag: Swift.String?
+  final public var type: LiveShopperSDK.LSGeofence.GeometryType
+  public enum GeometryType : Swift.Int, Swift.Codable {
+    case CIRCLE
+    case POLYGON
+    public typealias RawValue = Swift.Int
+    public init?(rawValue: Swift.Int)
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
   @objc deinit
 }
 extension LSGeofence : Swift.Codable {
@@ -497,7 +507,7 @@ extension LSTaskResponseCount : Swift.Codable {
   final public func encode(to encoder: Swift.Encoder) throws
 }
 final public class LSPlace {
-  final public var _id: Swift.String {
+  final public var _id: Swift.String? {
     get
   }
   final public var active: Swift.Bool?
@@ -984,6 +994,9 @@ public protocol BarcodeScannerDelegate : AnyObject {
   func scanningDidStop()
   func scanningSucceeded(code: Swift.String?)
 }
+extension LiveShopperSDK.LSGeofence.GeometryType : Swift.Equatable {}
+extension LiveShopperSDK.LSGeofence.GeometryType : Swift.Hashable {}
+extension LiveShopperSDK.LSGeofence.GeometryType : Swift.RawRepresentable {}
 extension LiveShopperSDK.LSEvent.Confidence : Swift.Equatable {}
 extension LiveShopperSDK.LSEvent.Confidence : Swift.Hashable {}
 extension LiveShopperSDK.LSEvent.Confidence : Swift.RawRepresentable {}
