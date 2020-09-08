@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
     spec.name                   = 'LiveShopperSDK'
-    spec.version                = '0.2.3'
+    spec.version                = '0.2.4'
     spec.summary                = 'Official LiveShopper SDK for iOS to access LiveShopper Platform.'
     spec.homepage               = 'https://liveshopper.com'
     spec.description            = <<-DESC
