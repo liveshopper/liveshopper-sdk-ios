@@ -20,6 +20,6 @@ Pod::Spec.new do |spec|
     spec.requires_arc           = true
     spec.source                 = { :git => 'https://github.com/liveshopper/liveshopper-sdk-ios.git', :tag => spec.version.to_s }
     spec.source_files           = 'dist/LiveShopperSDK.framework/Headers/*.h'
-    spec.swift_versions         = ['5.0', '5.1', '5.2']
+    spec.swift_versions         = ['5.0', '5.1', '5.2', '5.3', '5.4', '5.5']
     spec.vendored_frameworks    = 'dist/LiveShopperSDK.framework'
   end
